@@ -1,0 +1,21 @@
+{
+  "name": "nexcom",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "start": "pnpm --filter web start",
+    "check-types": "turbo run check-types",
+    "format": "prettier --write \"**/*.{ts,tsx,css,md,json}\""
+  },
+  "devDependencies": {
+    "prettier": "catalog:",
+    "turbo": "2.6.0"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=22"
+  }
+}

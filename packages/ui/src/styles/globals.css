@@ -1,0 +1,54 @@
+/*
+ * The Nexcom — design tokens (DA v1, octobre 2026).
+ * Fond papier par défaut, encre pour le texte, cobalt réservé aux accents.
+ * Polices : Bricolage Grotesque (titres), IBM Plex Sans (texte), IBM Plex Mono (étiquettes).
+ * Les apps chargent les polices avec next/font et exposent --font-bricolage, --font-plex-sans,
+ * --font-plex-mono sur <html> ; les tokens ci-dessous s'y branchent.
+ */
+@import "tailwindcss";
+@source "../../../../apps/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+@theme inline {
+  --color-cobalt: #2346e8;
+  --color-cobalt-deep: #1a33b0;
+  --color-cobalt-soft: #7f98ff;
+  --color-cobalt-line: #3d5cf0;
+  --color-mist: #e3e8fd;
+  --color-ink: #12141a;
+  --color-paper: #f4f2ec;
+  --color-slate: #5b5f6a;
+  --color-body: #3a3d45;
+  --color-line: #d9d5ca;
+  --color-fog: #c9ccd4;
+  --color-ash: #a9aeba;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 3px;
+  }
+}
