@@ -27,20 +27,11 @@ pnpm check-types
 
 ## Direction artistique
 
-Les tokens vivent dans `packages/ui/src/styles/globals.css` :
+**Nouvelle DA « Sur mesure » validée (novembre 2026), migration en cours.** Tout est dans `docs/da/` (guide de marque,
+tokens, logo, personnage) et `docs/maquettes/` (landing et portfolio). Voir aussi `CLAUDE.md`.
 
-| Token    | Valeur    | Usage                                             |
-| -------- | --------- | ------------------------------------------------- |
-| `cobalt` | `#2346E8` | accents : logo, boutons, un bloc fort par section |
-| `ink`    | `#12141A` | texte, sections sombres                           |
-| `paper`  | `#F4F2EC` | fond par défaut                                   |
-| `mist`   | `#E3E8FD` | texte clair sur cobalt                            |
-| `slate`  | `#5B5F6A` | texte secondaire                                  |
-
-Polices auto-hébergées (paquets `@fontsource`, chargées avec `next/font/local`) : **Bricolage Grotesque** pour les
-titres, **IBM Plex Sans** pour le texte, **IBM Plex Mono** pour les étiquettes. Aucun appel à Google Fonts.
-
-Ton : vouvoiement, phrases courtes, on parle de ce qui est livré plutôt que des technologies.
+En attendant la migration, le site utilise encore la DA v1 : tokens dans `packages/ui/src/styles/globals.css`
+(cobalt, ink, paper), polices Bricolage Grotesque, IBM Plex Sans et IBM Plex Mono.
 
 ## Contenu
 
