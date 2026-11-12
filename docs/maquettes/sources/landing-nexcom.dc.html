@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>nexcom : landing</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#EEF1F8}a:hover{color:#F2604A}
+.btn{display:inline-block;text-decoration:none;transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.blend{mix-blend-mode:screen}
+@keyframes blinkdot{0%,100%{opacity:1}50%{opacity:.3}}
+.live{animation:blinkdot 1.6s infinite}
+@keyframes notif{0%{opacity:0;transform:translateY(-16px)}100%{opacity:1;transform:translateY(0)}}
+.notif{animation:notif .7s cubic-bezier(.2,.8,.3,1) 1.2s both}
+.mv{transition:transform .12s linear,opacity .12s linear}
+.who .lbl{opacity:0;transition:opacity .35s ease}
+.who:hover .lbl{opacity:1}
+@media (prefers-reduced-motion: reduce){.live,.notif{animation:none}.mv{transition:none}}
+@media (max-width: 900px){.rail{display:none !important}}
+</style>
+</helmet>
+<div style="background: #0C1029; color: #EEF1F8; font-family: 'Hanken Grotesk', system-ui, sans-serif; overflow-x: hidden; position: relative">
+
+<nav class="rail" aria-label="Sections" style="position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 5; display: flex; flex-direction: column; align-items: flex-start">
+<sc-for list="{{rail}}" as="r" hint-placeholder-count="6">
+<a href="{{r.href}}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 7px 0">
+<span style="width: {{r.bar}}px; border-top: 2px solid {{r.color}}; transition: width .3s ease"></span>
+<span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: {{r.color}}">{{r.label}}</span>
+</a>
+</sc-for>
+</nav>
+
+<div style="max-width: 1400px; margin: 0 auto; padding: 0 40px 0 120px; box-sizing: border-box">
+
+<header style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 0; flex-wrap: wrap">
+<a href="#" aria-label="nexcom, accueil" style="text-decoration: none; color: #EEF1F8; display: inline-flex; align-items: baseline; font-family: 'Instrument Serif', Georgia, serif; font-size: 42px; line-height: 1; letter-spacing: -0.03em"><span>ne</span><svg aria-hidden="true" width="20" height="21" viewBox="0 0 100 100" preserveAspectRatio="none" style="margin-left: 1px"><polygon points="0,0 20,0 53,50 20,100 0,100 33,50" fill="#F2604A"></polygon><polygon points="100,0 80,0 47,50 80,100 100,100 67,50" fill="#F2604A"></polygon></svg><span>com</span></a>
+<nav style="display: flex; gap: 30px; font-size: 15px; font-weight: 500"><a href="#pourquoi" style="text-decoration: none">Pourquoi nous</a><a href="#services" style="text-decoration: none">Services</a><a href="#realisations" style="text-decoration: none">Réalisations</a><a href="#methode" style="text-decoration: none">Méthode</a></nav>
+<a class="btn" href="#contact" style="background: #F2604A; color: #0C1029; padding: 13px 22px; border-radius: 999px; font-size: 15px; font-weight: 700">Démarrer un projet</a>
+</header>
+
+<section id="accueil" data-scene="0" style="position: relative; min-height: 860px; padding: 40px 0 80px; display: flex; flex-direction: column">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 00 · ACCUEIL · AGENCE DE DÉVELOPPEMENT À DAKAR</div>
+<div style="position: relative; align-self: flex-start; margin-top: 64px; padding: 0 44px 0 0">
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A"><span style="height: 16px; border-left: 2px solid #F2604A"></span><span style="flex-grow: 1; border-top: 2px solid #F2604A"></span><span>{{hw}} PX</span><span style="flex-grow: 1; border-top: 2px solid #F2604A"></span><span style="height: 16px; border-left: 2px solid #F2604A"></span></div>
+<h1 id="hero-h1" style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(96px, 15.5vw, 260px); line-height: 0.82; letter-spacing: -0.045em; white-space: nowrap; outline: 1.5px dashed #2E3A8A; outline-offset: 10px">Du code<br><em style="color: #F2604A">sur mesure.</em></h1>
+<div style="position: absolute; right: 0; top: 30px; bottom: 0; width: 20px; display: flex; flex-direction: column; align-items: center">
+<span style="width: 16px; border-top: 2px solid #8C93BF"></span><span style="flex-grow: 1; border-left: 2px solid #8C93BF"></span><span style="writing-mode: vertical-rl; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; padding: 8px 0">{{hh}} PX</span><span style="flex-grow: 1; border-left: 2px solid #8C93BF"></span><span style="width: 16px; border-top: 2px solid #8C93BF"></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 22px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF"><span>INSTRUMENT SERIF · {{fs}} PX</span><span>AJUSTÉ À TON ÉCRAN</span><span style="color: #CDEBDD">TEMPLATE : AUCUN</span></div>
+</div>
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 32px; color: #FFE7A3; transform: rotate(-3deg); transform-origin: left; margin-top: 18px">redimensionne ta fenêtre : tout se réajuste, comme ton futur site</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end; margin-top: auto; padding-top: 56px">
+<p style="margin: 0; flex: 999 1 520px; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.5; color: #C9CFEA; max-width: 680px">Sites, apps et SaaS pour les entreprises d'ici et d'ailleurs. Construits pour ton activité, pas copiés d'un template, avec Orange Money et Wave déjà branchés.</p>
+<div style="flex: 1 1 320px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end">
+<a class="btn" href="#contact" style="background: #F2604A; color: #0C1029; padding: 18px 28px; border-radius: 999px; font-size: 17px; font-weight: 700">Démarrer un projet</a>
+<a class="btn" href="#realisations" style="color: #EEF1F8; padding: 16px 26px; border-radius: 999px; font-size: 17px; font-weight: 600; border: 2px dashed #8C93BF">Voir les réalisations</a>
+</div>
+</div>
+</section>
+
+<section id="pourquoi" data-scene="1" style="position: relative; padding: 110px 0 90px; border-top: 1.5px dashed #2E3A8A">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">02 · POURQUOI NEXCOM</div>
+<h2 style="margin: 20px 0 56px; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(76px, 11vw, 190px); line-height: 0.84; letter-spacing: -0.045em">Ce qui change<br><em style="color: #F2604A">avec nous.</em></h2>
+<div style="border: 1.5px solid #2E3A8A; background: #0F1438">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 16px 24px; border-bottom: 1.5px solid #2E3A8A; font-size: 12px; font-weight: 700; letter-spacing: 0.14em"><span>TON-PROJET / AVANT → APRÈS</span><span style="color: #8C93BF">4 SUPPRESSIONS · <span style="color: #CDEBDD">4 AJOUTS</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0">
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #1A1238; opacity: {{dl0}}"><span style="font-size: 13px; color: #5C6399">1</span><span style="font-size: 22px; font-weight: 700; color: #F2604A">−</span><span style="font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; color: #8C93BF; text-decoration: line-through; text-decoration-color: #F2604A">un template que 300 autres sites utilisent déjà</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #11253A; opacity: {{dl0}}"><span style="font-size: 13px; color: #5C6399">2</span><span style="font-size: 22px; font-weight: 700; color: #CDEBDD">+</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.15; color: #EEF1F8">un site pensé pour ton activité, et pour personne d'autre</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #1A1238; opacity: {{dl1}}"><span style="font-size: 13px; color: #5C6399">3</span><span style="font-size: 22px; font-weight: 700; color: #F2604A">−</span><span style="font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; color: #8C93BF; text-decoration: line-through; text-decoration-color: #F2604A">un freelance qui ne répond plus après l'acompte</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #11253A; opacity: {{dl1}}"><span style="font-size: 13px; color: #5C6399">4</span><span style="font-size: 22px; font-weight: 700; color: #CDEBDD">+</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.15; color: #EEF1F8">un seul interlocuteur, joignable même après la mise en ligne</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #1A1238; opacity: {{dl2}}"><span style="font-size: 13px; color: #5C6399">5</span><span style="font-size: 22px; font-weight: 700; color: #F2604A">−</span><span style="font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; color: #8C93BF; text-decoration: line-through; text-decoration-color: #F2604A">« le paiement mobile, on verra plus tard »</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #11253A; opacity: {{dl2}}"><span style="font-size: 13px; color: #5C6399">6</span><span style="font-size: 22px; font-weight: 700; color: #CDEBDD">+</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.15; color: #EEF1F8">Orange Money et Wave branchés dès le départ</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #1A1238; opacity: {{dl3}}"><span style="font-size: 13px; color: #5C6399">7</span><span style="font-size: 22px; font-weight: 700; color: #F2604A">−</span><span style="font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; color: #8C93BF; text-decoration: line-through; text-decoration-color: #F2604A">une maquette découverte le jour de la livraison</span></div>
+<div class="mv" style="display: grid; grid-template-columns: 48px 28px 1fr; align-items: baseline; padding: 14px 24px; background: #11253A; opacity: {{dl3}}"><span style="font-size: 13px; color: #5C6399">8</span><span style="font-size: 22px; font-weight: 700; color: #CDEBDD">+</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.15; color: #EEF1F8">une démo en ligne chaque semaine, tu ajustes en route</span></div>
+</div>
+</div>
+<div style="display: flex; justify-content: flex-end; margin-top: 18px"><span style="font-family: 'Reenie Beanie', cursive; font-size: 32px; color: #FFE7A3; transform: rotate(-3deg)">on fusionne ?</span></div>
+</section>
+
+<section id="services" data-scene="2" style="position: relative; padding: 110px 0 90px; border-top: 1.5px dashed #2E3A8A">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">03 · CE QU'ON CONSTRUIT</div>
+<h2 style="margin: 20px 0 56px; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(76px, 11vw, 190px); line-height: 0.84; letter-spacing: -0.045em">Tu choisis<br>les <em style="color: #F2604A">pièces.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px">
+<div class="mv" style="transform: {{modA}}; opacity: {{modO}}; background: #EEF1F8; color: #0C1029; padding: 30px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em">MODULE A</div>
+<div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 68px; line-height: 0.9">Sites.</div><div style="font-size: 15px; line-height: 1.5; margin-top: 10px">Vitrines, landing pages, listes d'attente. Rapides et bien référencés.</div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; margin-top: 14px; color: #3A4690">NEXT.JS · SEO</div></div>
+</div>
+<div class="mv" style="transform: {{modB}}; opacity: {{modO}}; background: #1F2A6B; padding: 30px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #C9CFEA">MODULE B</div>
+<div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 68px; line-height: 0.9">Apps.</div><div style="font-size: 15px; line-height: 1.5; margin-top: 10px; color: #C9CFEA">Web, Android, iOS. Espaces clients et outils pour ton équipe.</div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; margin-top: 14px; color: #8C93BF">REACT · FLUTTER</div></div>
+</div>
+<div class="mv" style="transform: {{modC}}; opacity: {{modO}}; background: #F2604A; color: #0C1029; padding: 30px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em">MODULE C</div>
+<div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 68px; line-height: 0.9">SaaS.</div><div style="font-size: 15px; line-height: 1.5; margin-top: 10px">Abonnements, multi-clients, tableaux de bord. Comme Salonify.</div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; margin-top: 14px">NESTJS · POSTGRESQL</div></div>
+</div>
+<div class="mv" style="transform: {{modD}}; opacity: {{modO}}; border: 3px dashed #8C93BF; padding: 30px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE D</div>
+<div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 68px; line-height: 0.9">Le reste<span style="color: #F2604A">.</span></div><div style="font-size: 15px; line-height: 1.5; margin-top: 10px; color: #C9CFEA">Un besoin bizarre ? Tant mieux, c'est tout le principe du sur mesure.</div></div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center; margin-top: 72px">
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">+ MODULE PAIEMENT, DANS TOUT CE QUI PRÉCÈDE</div>
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(48px, 5.4vw, 92px); line-height: 0.9; letter-spacing: -0.03em">Et on branche <em style="color: #F2604A">l'argent.</em></div>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #C9CFEA">Tes clients paient comme ils veulent. Toi, tu reçois. C'est tout ce qu'il y a à savoir.</p>
+</div>
+<svg role="img" aria-label="Ton produit relié à Orange Money, Wave et la carte bancaire" viewBox="0 0 800 300" style="flex: 999 1 520px; min-width: 0; display: block">
+<rect x="2" y="95" width="230" height="110" fill="#131843" stroke="#EEF1F8" stroke-width="3"></rect>
+<text x="117" y="160" text-anchor="middle" font-family="Instrument Serif, serif" font-size="38" fill="#EEF1F8">Ton produit</text>
+<g fill="none" stroke="#F2604A" stroke-width="4" stroke-dasharray="1000" stroke-dashoffset="{{payDash}}">
+<path d="M232 150 C380 150 380 40 520 40" pathLength="1000"></path><path d="M232 150 H520" pathLength="1000"></path><path d="M232 150 C380 150 380 260 520 260" pathLength="1000"></path>
+</g>
+<g opacity="{{payO}}" font-family="Instrument Serif, serif" font-size="34">
+<rect x="520" y="8" width="276" height="64" rx="32" fill="#EEF1F8"></rect><text x="658" y="51" text-anchor="middle" fill="#0C1029">Orange Money</text>
+<rect x="520" y="118" width="276" height="64" rx="32" fill="#EEF1F8"></rect><text x="658" y="161" text-anchor="middle" fill="#0C1029">Wave</text>
+<rect x="520" y="228" width="276" height="64" rx="32" fill="none" stroke="#EEF1F8" stroke-width="3" stroke-dasharray="12 9"></rect><text x="658" y="271" text-anchor="middle" fill="#EEF1F8">Carte bancaire</text>
+</g>
+</svg>
+</div>
+</section>
+
+<section id="realisations" data-scene="3" style="position: relative; padding: 110px 0 90px; border-top: 1.5px dashed #2E3A8A">
+<div style="display: flex; justify-content: space-between; align-items: center"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">04 · RÉALISATIONS</div><div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #CDEBDD"><span class="live" style="width: 10px; height: 10px; border-radius: 50%; background: #CDEBDD"></span>EN LIGNE</div></div>
+<h2 style="margin: 16px 0 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(120px, 21vw, 360px); line-height: 0.8; letter-spacing: -0.06em">Déjà en <em style="color: #F2604A">ligne.</em></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 56px">
+<div style="flex: 999 1 560px; min-width: 0; position: relative">
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF"><span style="height: 14px; border-left: 1.5px solid #8C93BF"></span><span style="flex-grow: 1; border-top: 1.5px solid #8C93BF"></span><span>1440 PX</span><span style="flex-grow: 1; border-top: 1.5px solid #8C93BF"></span><span style="height: 14px; border-left: 1.5px solid #8C93BF"></span></div>
+<div class="mv" style="aspect-ratio: 16 / 10; border: 3px solid #EEF1F8; background: #131843; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; opacity: {{liveO}}">[CAPTURE SALONIFY]</div>
+</div>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 01 · SAAS</div>
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 76px; line-height: 0.9">Salonify</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #C9CFEA">La gestion des salons de coiffure : caisse, équipe, commissions, clients. Une app web et une app mobile pro, Wave branché.</p>
+<a href="#" style="font-size: 16px; font-weight: 700; text-decoration: none; color: #F2604A">Voir salonify.sn →</a>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 48px">
+<div style="background: #131843; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 02 · OPEN SOURCE</div>
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 56px; line-height: 0.9">Nexpay</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CFEA">Brancher le mobile money dans une app, sans y laisser sa santé.</p>
+<a href="#" style="margin-top: auto; font-size: 15px; font-weight: 700; text-decoration: none; color: #F2604A">Voir sur GitHub →</a>
+</div>
+<a href="#contact" style="text-decoration: none; color: #EEF1F8; border: 3px dashed #8C93BF; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-sizing: border-box">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 03 · EN ATTENTE</div>
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 56px; line-height: 0.9">Ton projet<span style="color: #F2604A"> ?</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CFEA">Ce cadre est vide. Il attend quelque chose de construit pour toi.</p>
+</a>
+</div>
+</section>
+
+<section id="methode" data-scene="4" style="position: relative; padding: 110px 0 90px; border-top: 1.5px dashed #2E3A8A">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">05 · COMMENT ÇA SE PASSE</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0 40px; margin-top: 10px">
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(220px, 34vw, 560px); line-height: 0.78; letter-spacing: -0.06em; color: #F2604A">{{count}}</div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 5%; flex: 1 1 320px">
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(56px, 7vw, 120px); line-height: 0.86; letter-spacing: -0.04em">minutes<br>pour commencer.</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.5; color: #C9CFEA; max-width: 440px">Un premier appel gratuit. Tu racontes, je pose les bonnes questions. C'est moi qui décroche, pas un robot.</p>
+</div>
+</div>
+<div style="position: relative; margin-top: 64px">
+<svg role="img" aria-label="Une maquette qui se dessine au fil du défilement" width="100%" viewBox="0 0 1200 420" style="display: block">
+<g fill="none" stroke="#EEF1F8" stroke-width="3" stroke-dasharray="1000" stroke-dashoffset="{{planDash}}">
+<rect x="2" y="2" width="1196" height="416" pathLength="1000"></rect><path d="M2 58 H1198" pathLength="1000"></path>
+<rect x="56" y="100" width="500" height="56" pathLength="1000"></rect><rect x="56" y="174" width="360" height="22" pathLength="1000"></rect><rect x="56" y="222" width="190" height="52" rx="26" pathLength="1000"></rect>
+<rect x="660" y="100" width="480" height="230" pathLength="1000"></rect>
+<rect x="56" y="350" width="340" height="44" pathLength="1000"></rect><rect x="430" y="350" width="340" height="44" pathLength="1000"></rect><rect x="800" y="350" width="340" height="44" pathLength="1000"></rect>
+</g>
+<g fill="#EEF1F8" opacity="{{planNotes}}"><circle cx="30" cy="30" r="8"></circle><circle cx="56" cy="30" r="8"></circle><circle cx="82" cy="30" r="8"></circle></g>
+</svg>
+<div class="mv" style="position: absolute; left: 270px; top: 50%; font-family: 'Reenie Beanie', cursive; font-size: clamp(26px, 2.6vw, 40px); color: #FFE7A3; transform: rotate(-4deg); opacity: {{planNotes}}">← le bouton qui fait vendre</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: 48px; border-top: 2px solid #2E3A8A; padding-top: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">01 · 15 MIN</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1">Premier appel</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">02 · [DÉLAI]</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1">La maquette</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">03 · CHAQUE SEMAINE</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1">Une démo</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">04 · LE JOUR J</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1">En ligne</span></div>
+</div>
+</section>
+
+<section id="contact" data-scene="5" style="position: relative; min-height: 860px; padding: 100px 0 40px; border-top: 1.5px dashed #2E3A8A; display: flex; flex-direction: column; justify-content: center; overflow: hidden">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">06 · TON TOUR</div>
+<div style="display: flex; justify-content: center; margin: 40px 0">
+<svg aria-hidden="true" width="280" height="280" viewBox="0 0 100 100" style="overflow: visible"><g class="mv" style="transform: {{chevL}}"><polygon points="0,0 20,0 53,50 20,100 0,100 33,50" fill="#F2604A"></polygon></g><g class="mv" style="transform: {{chevR}}"><polygon points="100,0 80,0 47,50 80,100 100,100 67,50" fill="#F2604A"></polygon></g></svg>
+</div>
+<h2 style="margin: 0; text-align: center; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(76px, 11vw, 190px); line-height: 0.84; letter-spacing: -0.045em">Et toi, c'est quoi<br>ton <em style="color: #F2604A">next ?</em></h2>
+<div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 48px">
+<a class="btn" href="#" style="background: #F2604A; color: #0C1029; padding: 20px 32px; border-radius: 999px; font-size: 18px; font-weight: 700">Envoyer un message</a>
+<a class="btn" href="#" style="color: #EEF1F8; padding: 18px 30px; border-radius: 999px; font-size: 18px; font-weight: 600; border: 2px dashed #8C93BF">[EMAIL]</a>
+</div>
+</section>
+
+<footer style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 28px 0 40px; border-top: 1.5px dashed #2E3A8A; font-size: 13px; color: #8C93BF">
+<span>THE NEXCOM · agence de développement · Dakar, Sénégal</span>
+<span style="display: flex; gap: 20px"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">GitHub</a><a href="#">Mouhamed Lamotte</a></span>
+</footer>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._tick = () => {
+      const vh = window.innerHeight || 900;
+      const els = Array.prototype.slice.call(document.querySelectorAll('[data-scene]'));
+      const p = els.map((el) => {
+        const r = el.getBoundingClientRect();
+        return Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.85)));
+      });
+      let cur = 0;
+      els.forEach((el, i) => { if (el.getBoundingClientRect().top < vh * 0.5) cur = i; });
+      const h1 = document.getElementById('hero-h1');
+      const m = h1 ? { hw: Math.round(h1.offsetWidth), hh: Math.round(h1.offsetHeight), fs: Math.round(parseFloat(getComputedStyle(h1).fontSize)) } : {};
+      this.setState(Object.assign({ p, cur }, m));
+    };
+    window.addEventListener('scroll', this._tick, { passive: true });
+    window.addEventListener('resize', this._tick);
+    this._tick();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._tick);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._tick);
+    window.removeEventListener('resize', this._tick);
+  }
+  renderVals() {
+    const st = this.state || {};
+    const p = st.p || [1, 1, 1, 1, 1, 1];
+    const g = (i) => (p[i] == null ? 1 : p[i]);
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const w = ease(g(1)), d = ease(g(2)), e = ease(Math.min(1, g(2) * 1.1)), f = ease(g(3)), b = ease(g(4)), c = ease(Math.min(1, g(4) * 1.15)), h = ease(g(5));
+    const off = (dx, dy) => 'translate(' + Math.round((1 - d) * dx) + 'px,' + Math.round((1 - d) * dy) + 'px)';
+    const line = (i) => Math.max(0.12, Math.min(1, (w - i * 0.18) / 0.28)).toFixed(3);
+    const labels = ['ACCUEIL', 'POURQUOI', 'SERVICES', 'RÉALISATIONS', 'MÉTHODE', 'CONTACT'];
+    const ids = ['accueil', 'pourquoi', 'services', 'realisations', 'methode', 'contact'];
+    const cur = st.cur || 0;
+    return {
+      hw: st.hw || 1120, hh: st.hh || 430, fs: st.fs || 223,
+      dl0: line(0), dl1: line(1), dl2: line(2), dl3: line(3),
+      modA: off(-160, 60), modB: off(0, 160), modC: off(160, -60), modD: off(0, -160), modO: Math.max(0.15, d).toFixed(3),
+      payDash: Math.round((1 - e) * 1000), payO: Math.max(0, (e - 0.5) / 0.5).toFixed(3),
+      liveO: (0.3 + 0.7 * f).toFixed(3),
+      count: String(Math.max(1, Math.round(15 * b))),
+      planDash: Math.round((1 - c) * 1000), planNotes: Math.max(0, (c - 0.7) / 0.3).toFixed(3),
+      chevL: 'translateX(' + Math.round(-(1 - h) * 260) + 'px)', chevR: 'translateX(' + Math.round((1 - h) * 260) + 'px)',
+      rail: labels.map((l, i) => ({ label: l, href: '#' + ids[i], color: cur === i ? '#F2604A' : '#8C93BF', bar: cur === i ? 28 : 12 })),
+    };
+  }
+}
+</script>
+</body>
+</html>

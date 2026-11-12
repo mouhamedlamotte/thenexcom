@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>L'atelier : Mouhamed Lamotte, tailleur chez The Nexcom</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F2A6B}a:hover{color:#1F2A6B}
+.nav a{text-decoration:none;font-weight:500}
+.squish{display:inline-block;transition:transform .25s cubic-bezier(.3,1.8,.5,1)}
+.squish:hover{transform:scale(1.06,.92)}
+.squish:active{transform:scale(.94,1.06)}
+.mat{background-color:#FFFFFF;background-image:linear-gradient(#DDE2F0 1px,transparent 1px),linear-gradient(90deg,#DDE2F0 1px,transparent 1px);background-size:40px 40px}
+.item{position:absolute;user-select:none;touch-action:none;cursor:grab;transition:scale .3s cubic-bezier(.3,1.8,.5,1)}
+.item:hover{scale:1.04}
+.item:active{cursor:grabbing;scale:1.08 .94}
+@keyframes sew{from{stroke-dashoffset:220}to{stroke-dashoffset:0}}
+.thread{stroke-dasharray:220;animation:sew 2.4s ease-out .4s both}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marq{animation:marq 22s linear infinite}
+.ltr{display:inline-block;transition:transform .35s cubic-bezier(.3,1.7,.5,1),color .2s}
+.ltr:hover{transform:translateY(-10px) rotate(-5deg);color:#1F2A6B}
+@media (prefers-reduced-motion: reduce){.thread{animation:none;stroke-dasharray:none}.marq{animation:none}}
+@media (max-width: 760px){.navlinks{display:none !important}}
+</style>
+</helmet>
+<div onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerLeave="{{up}}" style="background: #EEF1F8; color: #1F2A6B; font-family: 'Figtree', system-ui, sans-serif; min-height: 100vh; overflow-x: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+
+<header class="nav" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; flex-wrap: wrap">
+<a href="#" style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="40" height="40" viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="#1F2A6B"></circle><circle cx="60" cy="60" r="44" fill="none" stroke="#3A4690" stroke-width="3"></circle><circle cx="46" cy="46" r="7" fill="#EEF1F8"></circle><circle cx="74" cy="46" r="7" fill="#EEF1F8"></circle><circle cx="46" cy="74" r="7" fill="#EEF1F8"></circle><circle cx="74" cy="74" r="7" fill="#EEF1F8"></circle><path d="M46 74 L46 46 L74 74 L74 46" fill="none" stroke="#F2604A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-family: 'Gloock', Georgia, serif; font-size: 26px; line-height: 1">the nexcom</span>
+</a>
+<nav class="navlinks" style="display: flex; gap: 28px; font-size: 16px; background: #FFFFFF; padding: 12px 26px; border-radius: 999px">
+<a href="#carte">La carte</a>
+<a href="#portes">Déjà portés</a>
+<a href="#tailleur">Le tailleur</a>
+</nav>
+<a class="squish" href="#rdv" style="background: #1F2A6B; color: #EEF1F8; padding: 13px 22px; border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none">Prendre mes mesures</a>
+</header>
+
+<section style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch; padding: 28px 0 56px">
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 34px; line-height: 1; color: #F2604A; transform: rotate(-3deg); transform-origin: left">pas de prêt-à-porter ici ↓</div>
+<h1 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-weight: 400; font-size: clamp(64px, 8.4vw, 118px); line-height: 0.9; letter-spacing: -0.03em"><span class="ltr">Du</span> <span class="ltr">code</span><br><span class="ltr" style="color: #F2604A">sur</span> <span class="ltr" style="color: #F2604A">mesure.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 500px">À Dakar, on ne va pas chez une marque, on va chez son tailleur. Moi, c'est Mouhamed, le tailleur. The Nexcom, c'est mon atelier. Sites, apps et SaaS cousus main, du croquis à la mise en ligne.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a class="squish" href="#rdv" style="background: #1F2A6B; color: #EEF1F8; padding: 18px 28px; border-radius: 999px; font-size: 17px; font-weight: 700; text-decoration: none">Prendre mes mesures</a>
+<a class="squish" href="#portes" style="background: #FFFFFF; color: #1F2A6B; padding: 16px 26px; border-radius: 999px; font-size: 17px; font-weight: 700; text-decoration: none; border: 2px dashed #1F2A6B">Voir les pièces</a>
+</div>
+</div>
+
+<div class="mat" style="flex: 1 1 520px; min-width: 0; min-height: 580px; border-radius: 40px; position: relative; overflow: hidden">
+<div style="position: absolute; left: 24px; bottom: 18px; font-family: 'Reenie Beanie', cursive; font-size: 28px; color: #F2604A; transform: rotate(-2deg); pointer-events: none">la table de coupe : attrape, déplace, joue</div>
+
+<div class="item" onPointerDown="{{it.btn.down}}" style="left: {{it.btn.x}}%; top: {{it.btn.y}}px; z-index: {{it.btn.z}}; width: 170px; height: 170px">
+<svg role="img" aria-label="Le logo The Nexcom : un bouton cousu en N" width="170" height="170" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="54" fill="#1F2A6B"></circle>
+<circle cx="60" cy="60" r="44" fill="none" stroke="#3A4690" stroke-width="3"></circle>
+<circle cx="46" cy="46" r="7" fill="#FFFFFF"></circle><circle cx="74" cy="46" r="7" fill="#FFFFFF"></circle><circle cx="46" cy="74" r="7" fill="#FFFFFF"></circle><circle cx="74" cy="74" r="7" fill="#FFFFFF"></circle>
+<path class="thread" d="M46 74 L46 46 L74 74 L74 46 C82 30 100 26 116 36" fill="none" stroke="#F2604A" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+
+<div class="item" onPointerDown="{{it.salo.down}}" style="left: {{it.salo.x}}%; top: {{it.salo.y}}px; z-index: {{it.salo.z}}; width: 220px; transform: rotate(4deg)">
+<div style="background: #CDEBDD; padding: 26px 22px 22px; clip-path: polygon(0 10px, 5% 0, 10% 10px, 15% 0, 20% 10px, 25% 0, 30% 10px, 35% 0, 40% 10px, 45% 0, 50% 10px, 55% 0, 60% 10px, 65% 0, 70% 10px, 75% 0, 80% 10px, 85% 0, 90% 10px, 95% 0, 100% 10px, 100% 100%, 0 100%); border-radius: 0 0 18px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em">PIÈCE N°1 · SAAS</div>
+<div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">Salonify</div>
+<div style="font-size: 15px; line-height: 1.35">Gérer son salon sans cahier.</div>
+</div>
+</div>
+
+<div class="item" onPointerDown="{{it.pay.down}}" style="left: {{it.pay.x}}%; top: {{it.pay.y}}px; z-index: {{it.pay.z}}; width: 210px; transform: rotate(-5deg)">
+<div style="background: #FFE7A3; padding: 26px 22px 22px; clip-path: polygon(0 10px, 5% 0, 10% 10px, 15% 0, 20% 10px, 25% 0, 30% 10px, 35% 0, 40% 10px, 45% 0, 50% 10px, 55% 0, 60% 10px, 65% 0, 70% 10px, 75% 0, 80% 10px, 85% 0, 90% 10px, 95% 0, 100% 10px, 100% 100%, 0 100%); border-radius: 0 0 18px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em">PIÈCE N°2 · OPEN SOURCE</div>
+<div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">Nexpay</div>
+<div style="font-size: 15px; line-height: 1.35">Le mobile money sans prise de tête.</div>
+</div>
+</div>
+
+<div class="item" onPointerDown="{{it.ruban.down}}" style="left: {{it.ruban.x}}%; top: {{it.ruban.y}}px; z-index: {{it.ruban.z}}; width: 330px; transform: rotate(-3deg)">
+<div style="background: #FFE7A3; border-radius: 8px; height: 58px; position: relative; display: flex; align-items: flex-end; padding: 0 14px 8px; box-sizing: border-box; background-image: repeating-linear-gradient(90deg, #1F2A6B 0 2px, transparent 2px 22px); background-size: 100% 16px; background-repeat: no-repeat; background-color: #FFE7A3">
+<span style="font-size: 14px; font-weight: 700">15 min de prise de mesures · gratuit</span>
+</div>
+</div>
+
+<div class="item" onPointerDown="{{it.patron.down}}" style="left: {{it.patron.x}}%; top: {{it.patron.y}}px; z-index: {{it.patron.z}}; width: 190px; transform: rotate(3deg)">
+<div style="border: 3px dashed #1F2A6B; border-radius: 60px 18px 60px 18px; background: #EEF1F8; padding: 22px 20px; display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 26px; line-height: 1; color: #F2604A">patron à couper</div>
+<div style="font-family: 'Gloock', Georgia, serif; font-size: 26px; line-height: 1.05">Ton projet ici ?</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div style="background: #1F2A6B; color: #EEF1F8; padding: 16px 0; overflow: hidden">
+<div class="marq" style="display: flex; gap: 40px; white-space: nowrap; font-family: 'Gloock', Georgia, serif; font-size: 30px; width: max-content">
+<span>Sites</span><span style="color: #CDEBDD">✕</span><span>Apps</span><span style="color: #CDEBDD">✕</span><span>SaaS</span><span style="color: #CDEBDD">✕</span><span>Paiements mobile money</span><span style="color: #CDEBDD">✕</span><span>Retouches</span><span style="color: #CDEBDD">✕</span><span>Dakar → partout</span><span style="color: #CDEBDD">✕</span>
+<span>Sites</span><span style="color: #CDEBDD">✕</span><span>Apps</span><span style="color: #CDEBDD">✕</span><span>SaaS</span><span style="color: #CDEBDD">✕</span><span>Paiements mobile money</span><span style="color: #CDEBDD">✕</span><span>Retouches</span><span style="color: #CDEBDD">✕</span><span>Dakar → partout</span><span style="color: #CDEBDD">✕</span>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+
+<section id="carte" style="padding: 80px 0 40px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+<h2 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; letter-spacing: -0.02em">La carte <span style="color: #F2604A">de l'atelier</span></h2>
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #F2604A">prix sur devis, après la prise de mesures</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
+<div style="background: #FFFFFF; border-radius: 30px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #F2604A; line-height: 1">01</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">La coupe</div><div style="font-size: 16px; line-height: 1.5; color: #4B5280">Design d'interface, maquettes, parcours. On dessine avant de couper.</div></div>
+<div style="background: #FFFFFF; border-radius: 30px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #F2604A; line-height: 1">02</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">La couture</div><div style="font-size: 16px; line-height: 1.5; color: #4B5280">Sites, apps web et mobiles, SaaS, paiements Orange Money et Wave.</div></div>
+<div style="background: #FFFFFF; border-radius: 30px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #F2604A; line-height: 1">03</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">Les retouches</div><div style="font-size: 16px; line-height: 1.5; color: #4B5280">Refonte, corrections, vitesse. Ton site ne tombe plus bien ? On reprend.</div></div>
+<div style="background: #CDEBDD; border-radius: 30px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #1F2A6B; line-height: 1">04</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 34px; line-height: 1">L'entretien</div><div style="font-size: 16px; line-height: 1.5">Hébergement, mises à jour, suivi au mois. Le vêtement reste impeccable.</div></div>
+</div>
+</section>
+
+<section style="padding: 48px 0; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; letter-spacing: -0.02em">Comment <span style="color: #F2604A">ça se coud</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 3px dashed #F2604A">
+<div style="padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 44px; line-height: 1; color: #F2604A">1</div><div style="font-size: 20px; font-weight: 700">Prise de mesures</div><div style="font-size: 15px; line-height: 1.5; color: #4B5280">Un appel de 15 minutes. Tu racontes, je note, je pose les bonnes questions.</div></div>
+<div style="padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 44px; line-height: 1; color: #F2604A">2</div><div style="font-size: 20px; font-weight: 700">Le patron</div><div style="font-size: 15px; line-height: 1.5; color: #4B5280">Maquettes et devis clair. Tu valides avant que je touche au tissu.</div></div>
+<div style="padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 44px; line-height: 1; color: #F2604A">3</div><div style="font-size: 20px; font-weight: 700">Les essayages</div><div style="font-size: 15px; line-height: 1.5; color: #4B5280">Une version en ligne chaque semaine. Tu essaies, on ajuste.</div></div>
+<div style="padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 44px; line-height: 1; color: #F2604A">4</div><div style="font-size: 20px; font-weight: 700">Livré, cousu</div><div style="font-size: 15px; line-height: 1.5; color: #4B5280">Mise en ligne, formation, et je reste joignable. Avant Tabaski, promis.</div></div>
+</div>
+</section>
+
+<section id="portes" style="padding: 48px 0; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; letter-spacing: -0.02em">Déjà <span style="color: #F2604A">portés</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
+<a class="squish" href="#" style="text-decoration: none; background: #1F2A6B; color: #EEF1F8; border-radius: 34px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-height: 300px">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #C9CFEA">SAAS · GESTION DE SALONS</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 54px; line-height: 0.95">Salonify</div><div style="font-size: 16px; line-height: 1.5; color: #E4E7F5">La caisse, l'équipe et les clients d'un salon dans une seule app. [CAPTURE À AJOUTER]</div></div>
+</a>
+<a class="squish" href="#" style="text-decoration: none; background: #FFE7A3; color: #1F2A6B; border-radius: 34px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-height: 300px">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em">OPEN SOURCE · PAIEMENTS</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 54px; line-height: 0.95">Nexpay</div><div style="font-size: 16px; line-height: 1.5">Brancher le mobile money sans y laisser sa santé. [CAPTURE À AJOUTER]</div></div>
+</a>
+<a class="squish" href="#rdv" style="text-decoration: none; background: #EEF1F8; color: #1F2A6B; border-radius: 60px 20px 60px 20px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-height: 300px; border: 3px dashed #1F2A6B; box-sizing: border-box">
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #F2604A; line-height: 1">sur la table de coupe</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Gloock', Georgia, serif; font-size: 54px; line-height: 0.95">Ton projet ?</div><div style="font-size: 16px; line-height: 1.5; color: #4B5280">Il manque une pièce à cette collection. Je pense que c'est la tienne.</div></div>
+</a>
+</div>
+</section>
+
+<section id="tailleur" style="padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px">
+<div style="background: #FFFFFF; border-radius: 34px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 18px">
+<div style="width: 96px; height: 96px; border-radius: 50%; border: 3px dashed #1F2A6B; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #4B5280; text-align: center; flex-shrink: 0">avatar<br>plus tard</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 28px; color: #F2604A; line-height: 1">le tailleur</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 40px; line-height: 1">Mouhamed Lamotte</div><div style="font-size: 15px; color: #4B5280">undefined.dev</div></div>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.55">Développeur à Dakar. Je construis des choses qui ont l'air intelligentes jusqu'à ce qu'on lise le code (je plaisante, à moitié). C'est moi qui prends tes mesures, et c'est moi qui couds.</p>
+</div>
+<div style="background: #1F2A6B; color: #EEF1F8; border-radius: 34px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 18px">
+<svg aria-hidden="true" width="96" height="96" viewBox="0 0 120 120" style="flex-shrink: 0"><circle cx="60" cy="60" r="54" fill="#1F2A6B"></circle><circle cx="46" cy="46" r="7" fill="#1F2A6B"></circle><circle cx="74" cy="46" r="7" fill="#1F2A6B"></circle><circle cx="46" cy="74" r="7" fill="#1F2A6B"></circle><circle cx="74" cy="74" r="7" fill="#1F2A6B"></circle><path d="M46 74 L46 46 L74 74 L74 46" fill="none" stroke="#F2604A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-family: 'Reenie Beanie', cursive; font-size: 28px; color: #CDEBDD; line-height: 1">l'atelier</div><div style="font-family: 'Gloock', Georgia, serif; font-size: 40px; line-height: 1">The Nexcom</div><div style="font-size: 15px; color: #C9CFEA">entreprise enregistrée à Dakar</div></div>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #E4E7F5">Là où on signe, où on facture, où les projets clients sont cousus et livrés. Même main, même fil : un tailleur, un atelier, une seule maison.</p>
+</div>
+</section>
+
+<section id="rdv" style="margin: 40px 0 0; background: #1F2A6B; color: #EEF1F8; border-radius: 44px; padding: clamp(32px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-weight: 400; font-size: clamp(48px, 7vw, 100px); line-height: 0.9; letter-spacing: -0.02em">Passe <span style="color: #FFE7A3">à l'atelier.</span></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #E4E7F5">15 minutes pour prendre tes mesures. Gratuit, sans engagement, et je réponds moi-même.</p>
+</div>
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 12px">
+<a class="squish" href="#" style="background: #FFE7A3; color: #1F2A6B; padding: 18px 26px; border-radius: 999px; font-size: 18px; font-weight: 700; text-decoration: none; text-align: center">Réserver un appel</a>
+<a class="squish" href="#" style="color: #EEF1F8; padding: 16px 26px; border-radius: 999px; font-size: 17px; font-weight: 700; text-decoration: none; text-align: center; border: 2px dashed #C9CFEA">Écrire sur WhatsApp</a>
+</div>
+</section>
+
+<footer style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 32px 0 40px; font-size: 14px; color: #4B5280">
+<span>Mouhamed Lamotte, tailleur numérique chez <span style="font-family: 'Gloock', Georgia, serif; font-size: 17px; color: #1F2A6B">the nexcom</span> · Dakar</span>
+<span style="display: flex; gap: 18px"><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">X</a></span>
+</footer>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const base = {
+      btn: { x: 8, y: 40 }, salo: { x: 52, y: 34 }, pay: { x: 38, y: 250 },
+      ruban: { x: 5, y: 440 }, patron: { x: 64, y: 360 },
+    };
+    const pos = st.pos || {};
+    const it = {};
+    Object.keys(base).forEach((id) => {
+      const p = pos[id] || base[id];
+      it[id] = {
+        x: Math.round(p.x * 10) / 10, y: Math.round(p.y), z: st.top === id ? 20 : 2,
+        down: (e) => {
+          e.preventDefault();
+          const mat = e.currentTarget.parentElement;
+          const w = mat ? mat.getBoundingClientRect().width : 600;
+          const s = mat && mat.offsetWidth ? w / mat.offsetWidth : 1;
+          this.setState({ drag: { id, sx: e.clientX, sy: e.clientY, ox: p.x, oy: p.y, w: w || 600, s: s || 1 }, top: id });
+        },
+      };
+    });
+    return {
+      it,
+      move: (e) => {
+        const d = (this.state || {}).drag;
+        if (!d) return;
+        const x = Math.max(-10, Math.min(90, d.ox + ((e.clientX - d.sx) / d.w) * 100));
+        const y = Math.max(-20, Math.min(520, d.oy + (e.clientY - d.sy) / d.s));
+        this.setState({ pos: { ...((this.state || {}).pos || {}), [d.id]: { x, y } } });
+      },
+      up: () => { if ((this.state || {}).drag) this.setState({ drag: null }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Direction A : Gelée</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1446}
+.squish{transition:transform .25s cubic-bezier(.3,1.8,.5,1)}
+.squish:hover{transform:scale(1.06,.92)}
+.squish:active{transform:scale(.94,1.06)}
+@keyframes wob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(14px,-18px) scale(1.04)}66%{transform:translate(-12px,10px) scale(.97)}}
+@keyframes orb1{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,60px)}}
+@keyframes orb2{0%,100%{transform:translate(0,0)}50%{transform:translate(80px,-50px)}}
+@keyframes orb3{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-90px)}}
+.wob{animation:wob 7s ease-in-out infinite;transform-origin:330px 300px}
+.o1{animation:orb1 6s ease-in-out infinite}
+.o2{animation:orb2 8s ease-in-out infinite}
+.o3{animation:orb3 5s ease-in-out infinite}
+.cur{transition:cx .35s cubic-bezier(.3,1.4,.5,1),cy .35s cubic-bezier(.3,1.4,.5,1)}
+@media (prefers-reduced-motion: reduce){.wob,.o1,.o2,.o3{animation:none}.cur{transition:none}}
+</style>
+</helmet>
+<div onMouseMove="{{move}}" style="width: 1200px; height: 900px; box-sizing: border-box; background: #F4EEFF; color: #1A1446; font-family: 'Figtree', system-ui, sans-serif; position: relative; overflow: hidden">
+<svg aria-hidden="true" width="660" height="640" viewBox="0 0 660 640" style="position: absolute; left: 540px; top: 60px">
+<defs>
+<filter id="goo-g"><feGaussianBlur in="SourceGraphic" stdDeviation="16" result="b"></feGaussianBlur><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -11"></feColorMatrix></filter>
+</defs>
+<g filter="url(#goo-g)">
+<circle class="wob" cx="330" cy="300" r="180" fill="#3D3BFF"></circle>
+<circle class="o1" cx="540" cy="130" r="64" fill="#3D3BFF"></circle>
+<circle class="o2" cx="140" cy="500" r="52" fill="#3D3BFF"></circle>
+<circle class="cur" cx="{{cx}}" cy="{{cy}}" r="74" fill="#3D3BFF"></circle>
+</g>
+<g filter="url(#goo-g)">
+<circle class="o3" cx="500" cy="480" r="58" fill="#FF9ECF"></circle>
+<circle class="o1" cx="560" cy="540" r="40" fill="#FF9ECF"></circle>
+</g>
+<circle cx="330" cy="300" r="112" fill="none" stroke="#F4EEFF" stroke-width="3" stroke-dasharray="10 10"></circle>
+<text x="330" y="296" text-anchor="middle" font-family="Figtree, sans-serif" font-size="17" font-weight="600" fill="#F4EEFF">ton avatar</text>
+<text x="330" y="320" text-anchor="middle" font-family="Figtree, sans-serif" font-size="14" fill="#C9C8FF">(on y revient après)</text>
+</svg>
+<header style="position: absolute; left: 56px; right: 56px; top: 36px; display: flex; align-items: center; justify-content: space-between">
+<div style="font-family: 'Bagel Fat One', system-ui; font-size: 34px; line-height: 1; display: flex; align-items: flex-end; gap: 3px">nexcom<span style="width: 14px; height: 14px; border-radius: 50%; background: #FF9ECF; margin-bottom: 6px"></span></div>
+<nav style="display: flex; gap: 28px; font-size: 16px; font-weight: 500; background: #FFFFFF; padding: 12px 24px; border-radius: 999px">
+<a href="#" style="text-decoration: none">Projets</a>
+<a href="#" style="text-decoration: none">Services</a>
+<a href="#" style="text-decoration: none">Moi</a>
+</nav>
+</header>
+<div style="position: absolute; left: 56px; top: 170px; width: 580px; display: flex; flex-direction: column; gap: 26px">
+<div style="align-self: flex-start; background: #D7FF6B; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Dispo pour ton projet · Dakar</div>
+<h1 style="margin: 0; font-family: 'Bagel Fat One', system-ui; font-weight: 400; font-size: 88px; line-height: 0.95; letter-spacing: -0.01em">Des produits qu'on a envie de <span style="color: #3D3BFF">toucher.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 500px">Moi c'est Mouhamed. Je fabrique des sites, des apps et des SaaS doux à utiliser. Quand c'est pour un client, ça s'appelle The Nexcom.</p>
+<div style="display: flex; gap: 12px">
+<a class="squish" href="#" style="background: #1A1446; color: #F4EEFF; padding: 18px 28px; border-radius: 999px; font-size: 17px; font-weight: 700; text-decoration: none; display: inline-block">On en parle ?</a>
+<a class="squish" href="#" style="background: #FFFFFF; color: #1A1446; padding: 18px 28px; border-radius: 999px; font-size: 17px; font-weight: 700; text-decoration: none; display: inline-block">Voir les projets</a>
+</div>
+</div>
+<div style="position: absolute; left: 56px; right: 56px; bottom: 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border-radius: 28px; padding: 20px 24px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5488">Couleurs</div>
+<div style="display: flex; gap: 8px">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #3D3BFF"></div>
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #FF9ECF"></div>
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #D7FF6B"></div>
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #1A1446"></div>
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #F4EEFF; border: 2px solid #DCD3F5; box-sizing: border-box"></div>
+</div>
+<div style="font-size: 13px; color: #5A5488">Cobalt, chewing-gum, citron vert, encre nuit, lait lilas</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 28px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5488">Polices</div>
+<div style="font-family: 'Bagel Fat One', system-ui; font-size: 30px; line-height: 1">Bagel Fat One</div>
+<div style="font-size: 16px; font-weight: 500">Figtree pour le texte</div>
+</div>
+<div style="background: #1A1446; color: #F4EEFF; border-radius: 28px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #C9C8FF">L'effet waouh</div>
+<div style="font-size: 15px; line-height: 1.45">Les bulles fusionnent et suivent la souris comme de la gelée. Les boutons s'écrasent quand on clique. Tout donne envie de jouer.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    return {
+      cx: st.cx ?? 430,
+      cy: st.cy ?? 360,
+      move: (e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        const s = r.width / 1200 || 1;
+        const x = (e.clientX - r.left) / s - 540;
+        const y = (e.clientY - r.top) / s - 60;
+        this.setState({ cx: Math.max(-40, Math.min(700, x)), cy: Math.max(-40, Math.min(680, y)) });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

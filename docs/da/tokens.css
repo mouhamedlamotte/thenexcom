@@ -1,0 +1,58 @@
+/* nexcom — DA « Sur mesure », généré depuis docs/da/tokens.json */
+
+:root, [data-theme="nuit"] {
+  --nuit: #0C1029;
+  --nuit-relief: #131843;
+  --trame: #18205A;
+  --indigo: #1F2A6B;
+  --indigo-clair: #3A4690;
+  --craie: #EEF1F8;
+  --corail: #F2604A;
+  --ardoise: #8C93BF;
+  --beurre: #FFE7A3;
+  --menthe: #CDEBDD;
+  --surface: #0C1029;
+  --surface-relief: #131843;
+  --encre: #EEF1F8;
+  --encre-douce: #8C93BF;
+  --accent: #F2604A;
+  --ligne: #2E3A8A;
+}
+
+[data-theme="craie"] {
+  --surface: #EEF1F8;
+  --surface-relief: #FFFFFF;
+  --encre: #0C1029;
+  --encre-douce: #3A4690;
+  --ligne: #C9CFEA;
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-0: 0;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --radius-icone: 23%;
+  --trait-fin: 1.5px;
+  --trait-cadre: 3px;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-note: "Reenie Beanie", cursive;
+}
+.affiche { font-family: var(--font-display); font-size: 280px; line-height: 0.82; font-weight: 400; letter-spacing: -0.04em; }
+.titre { font-family: var(--font-display); font-size: 120px; line-height: 0.88; font-weight: 400; letter-spacing: -0.03em; }
+.titre-2 { font-family: var(--font-display); font-size: 64px; line-height: 0.95; font-weight: 400; letter-spacing: -0.02em; }
+.titre-italique { font-family: var(--font-display); font-size: 64px; line-height: 0.95; font-weight: 400; letter-spacing: -0.02em; font-style: italic; }
+.texte-grand { font-family: var(--font-sans); font-size: 22px; line-height: 1.5; font-weight: 400; }
+.texte { font-family: var(--font-sans); font-size: 17px; line-height: 1.55; font-weight: 400; }
+.etiquette { font-family: var(--font-sans); font-size: 13px; line-height: 1.4; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.note { font-family: var(--font-note); font-size: 36px; line-height: 1; font-weight: 400; }

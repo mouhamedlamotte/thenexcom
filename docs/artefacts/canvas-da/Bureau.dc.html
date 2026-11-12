@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Direction B : Le Bureau</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#121212}
+.paper{background-color:#EEF0F6;background-image:linear-gradient(#DDE1EE 1px,transparent 1px),linear-gradient(90deg,#DDE1EE 1px,transparent 1px);background-size:32px 32px}
+.item{transition:box-shadow .2s, scale .2s;user-select:none;touch-action:none;cursor:grab}
+.item:hover{scale:1.03}
+.item:active{cursor:grabbing}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin 14s linear infinite;transform-origin:60px 60px}
+@media (prefers-reduced-motion: reduce){.spin{animation:none}}
+</style>
+</helmet>
+<div class="paper" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerLeave="{{up}}" style="width: 1200px; height: 900px; box-sizing: border-box; color: #121212; font-family: 'Archivo', system-ui, sans-serif; position: relative; overflow: hidden">
+<header style="position: absolute; left: 56px; right: 56px; top: 32px; display: flex; align-items: center; justify-content: space-between">
+<div style="background: #121212; color: #EEF0F6; padding: 8px 16px 10px; border-radius: 10px; font-weight: 900; font-stretch: 125%; font-size: 22px; letter-spacing: -0.01em; transform: rotate(-2deg)">THE NEXCOM</div>
+<nav style="display: flex; gap: 26px; font-size: 16px; font-weight: 600">
+<a href="#" style="text-decoration: none">Projets</a>
+<a href="#" style="text-decoration: none">Services</a>
+<a href="#" style="text-decoration: none">Contact</a>
+</nav>
+</header>
+<div style="position: absolute; left: 56px; top: 130px; width: 520px; display: flex; flex-direction: column; gap: 22px">
+<h1 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 86px; line-height: 0.9; letter-spacing: -0.03em">BIEN&shy;VENUE SUR MON BUREAU.</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.5; max-width: 460px">Mouhamed Lamotte, développeur à Dakar. Ici tout traîne : les projets, les idées, l'agence. Range comme tu veux.</p>
+<div style="font-family: 'Kalam', cursive; font-size: 26px; color: #FF5A36; transform: rotate(-3deg); transform-origin: left">attrape les trucs et bouge-les →</div>
+<a href="#" style="align-self: flex-start; background: #FF5A36; color: #121212; padding: 16px 26px; border-radius: 14px; font-size: 17px; font-weight: 800; text-decoration: none; border: 3px solid #121212">Laisse-moi un mot</a>
+</div>
+
+<div class="item" onPointerDown="{{it.note.down}}" style="position: absolute; left: {{it.note.x}}px; top: {{it.note.y}}px; z-index: {{it.note.z}}; transform: rotate(-5deg); width: 230px; background: #FFD84D; padding: 22px; box-sizing: border-box; border: 3px solid #121212; border-radius: 6px; font-family: 'Kalam', cursive; font-size: 21px; line-height: 1.3">Je code des trucs qui ont l'air malins… jusqu'à ce qu'on lise le code.<div style="font-size: 16px; margin-top: 10px; text-align: right">— M.</div></div>
+
+<div class="item" onPointerDown="{{it.pola.down}}" style="position: absolute; left: {{it.pola.x}}px; top: {{it.pola.y}}px; z-index: {{it.pola.z}}; transform: rotate(6deg); width: 220px; background: #FFFFFF; padding: 14px 14px 18px; box-sizing: border-box; border: 3px solid #121212; border-radius: 6px; display: flex; flex-direction: column; gap: 10px">
+<div style="height: 190px; background: #8FD3FF; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; text-align: center; padding: 12px">ton avatar ou ta photo<br>(plus tard)</div>
+<div style="font-family: 'Kalam', cursive; font-size: 22px; text-align: center">undefined.dev</div>
+</div>
+
+<div class="item" onPointerDown="{{it.salo.down}}" style="position: absolute; left: {{it.salo.x}}px; top: {{it.salo.y}}px; z-index: {{it.salo.z}}; transform: rotate(3deg); width: 250px; background: #FF5A36; padding: 20px; box-sizing: border-box; border: 3px solid #121212; border-radius: 26px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em">PROJET · SAAS</div>
+<div style="font-weight: 900; font-stretch: 125%; font-size: 30px; line-height: 1">SALONIFY</div>
+<div style="font-size: 15px; line-height: 1.35">Gérer son salon sans cahier.</div>
+</div>
+
+<div class="item" onPointerDown="{{it.pay.down}}" style="position: absolute; left: {{it.pay.x}}px; top: {{it.pay.y}}px; z-index: {{it.pay.z}}; transform: rotate(-4deg); width: 240px; background: #9BE7C4; padding: 20px; box-sizing: border-box; border: 3px solid #121212; border-radius: 26px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em">PROJET · OPEN SOURCE</div>
+<div style="font-weight: 900; font-stretch: 125%; font-size: 30px; line-height: 1">NEXPAY</div>
+<div style="font-size: 15px; line-height: 1.35">Le mobile money sans prise de tête.</div>
+</div>
+
+<div class="item" onPointerDown="{{it.agence.down}}" style="position: absolute; left: {{it.agence.x}}px; top: {{it.agence.y}}px; z-index: {{it.agence.z}}; transform: rotate(-2deg); width: 300px; background: #121212; color: #EEF0F6; padding: 20px 22px; box-sizing: border-box; border-radius: 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 900; font-stretch: 125%; font-size: 24px; line-height: 1">THE NEXCOM</div>
+<div style="font-size: 15px; line-height: 1.4; color: #C8CCDA">L'agence. Même bureau, même café, une facture en plus.</div>
+</div>
+
+<div class="item" onPointerDown="{{it.badge.down}}" style="position: absolute; left: {{it.badge.x}}px; top: {{it.badge.y}}px; z-index: {{it.badge.z}}; width: 120px; height: 120px">
+<svg aria-hidden="true" width="120" height="120" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="58" fill="#8FD3FF" stroke="#121212" stroke-width="3"></circle>
+<defs><path id="badge-b" d="M60 60 m-40 0 a40 40 0 1 1 80 0 a40 40 0 1 1 -80 0"></path></defs>
+<g class="spin"><text font-family="Archivo, sans-serif" font-size="13" font-weight="800" letter-spacing="2" fill="#121212"><textPath href="#badge-b">DISPO · DAKAR · DISPO · DAKAR ·</textPath></text></g>
+<circle cx="60" cy="60" r="14" fill="#FF5A36" stroke="#121212" stroke-width="3"></circle>
+</svg>
+</div>
+
+<div style="position: absolute; left: 56px; right: 56px; bottom: 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 3px solid #121212; border-radius: 18px; padding: 18px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em">COULEURS</div>
+<div style="display: flex; gap: 8px">
+<div style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid #121212; background: #FF5A36"></div>
+<div style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid #121212; background: #FFD84D"></div>
+<div style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid #121212; background: #8FD3FF"></div>
+<div style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid #121212; background: #9BE7C4"></div>
+<div style="width: 40px; height: 40px; border-radius: 10px; border: 2px solid #121212; background: #121212"></div>
+</div>
+<div style="font-size: 13px; color: #44474F">Tomate, post-it, ciel, menthe, encre sur papier quadrillé</div>
+</div>
+<div style="background: #FFFFFF; border: 3px solid #121212; border-radius: 18px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em">POLICES</div>
+<div style="font-weight: 900; font-stretch: 125%; font-size: 28px; line-height: 1">ARCHIVO EXPANDED</div>
+<div style="font-family: 'Kalam', cursive; font-size: 22px">Kalam pour les mots à la main</div>
+</div>
+<div style="background: #FFD84D; border: 3px solid #121212; border-radius: 18px; padding: 18px 22px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em">L'EFFET WAOUH</div>
+<div style="font-size: 15px; line-height: 1.45">Le site est ton bureau. Le visiteur attrape les projets, les notes, la photo, et les déplace. Personne ne repart sans avoir joué.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const base = {
+      note: { x: 610, y: 150 }, pola: { x: 880, y: 100 }, salo: { x: 600, y: 410 },
+      pay: { x: 890, y: 420 }, agence: { x: 650, y: 600 }, badge: { x: 1020, y: 610 },
+    };
+    const pos = st.pos || {};
+    const it = {};
+    Object.keys(base).forEach((id) => {
+      const p = pos[id] || base[id];
+      it[id] = {
+        x: Math.round(p.x), y: Math.round(p.y), z: st.top === id ? 20 : 2,
+        down: (e) => {
+          e.preventDefault();
+          this.setState({ drag: { id, sx: e.clientX, sy: e.clientY, ox: p.x, oy: p.y }, top: id });
+        },
+      };
+    });
+    return {
+      it,
+      move: (e) => {
+        const d = (this.state || {}).drag;
+        if (!d) return;
+        const r = e.currentTarget.getBoundingClientRect();
+        const s = r.width / 1200 || 1;
+        const x = Math.max(-60, Math.min(1120, d.ox + (e.clientX - d.sx) / s));
+        const y = Math.max(-40, Math.min(820, d.oy + (e.clientY - d.sy) / s));
+        this.setState({ pos: { ...((this.state || {}).pos || {}), [d.id]: { x, y } } });
+      },
+      up: () => { if ((this.state || {}).drag) this.setState({ drag: null }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
