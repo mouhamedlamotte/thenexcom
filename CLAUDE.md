@@ -17,6 +17,7 @@ Une nouvelle direction artistique a été validée le 12/11/2026. Elle remplace 
 2. `docs/da/tokens.json` et `docs/da/tokens.css` : les tokens. `tokens.json` est la source de vérité.
 3. `docs/maquettes/landing-nexcom.md` : la maquette validée de la landing, section par section, avec la mécanique d'animation.
 4. `docs/maquettes/portfolio-mouhamed.md` : la maquette du portfolio (à retravailler).
+5. `docs/artefacts/` : copie de tous les artefacts de travail (canvas, design system) et aperçus PNG dans `docs/artefacts/apercus/`. Les pistes de la page « Explorations » sont abandonnées.
 
 ### Règles de la nouvelle DA
 

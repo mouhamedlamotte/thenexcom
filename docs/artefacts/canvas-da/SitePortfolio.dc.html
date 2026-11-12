@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Mouhamed Lamotte : portfolio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#EEF1F8}a:hover{color:#F2604A}
+.navl a{text-decoration:none;font-weight:500}
+.btn{display:inline-block;text-decoration:none;transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.blend{mix-blend-mode:screen}
+.who .lbl{opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease}
+.who:hover .lbl{opacity:1;transform:translateY(0)}
+.proj{transition:background .25s ease}
+.proj:hover{background:#131843}
+.proj:hover .pn{color:#F2604A}
+@media (prefers-reduced-motion: reduce){.who .lbl{transition:none}}
+@media (max-width: 820px){.navl{display:none !important}}
+</style>
+</helmet>
+<div style="background: #0C1029; color: #EEF1F8; font-family: 'Hanken Grotesk', system-ui, sans-serif; min-height: 100vh; overflow-x: hidden; position: relative">
+<svg aria-hidden="true" width="100%" height="100%" style="position: absolute; inset: 0; pointer-events: none">
+<defs><pattern id="tr-p" width="96" height="96" patternUnits="userSpaceOnUse"><path d="M48 10 C60 26 60 38 48 48 C36 38 36 26 48 10 Z M48 86 C60 70 60 58 48 48 C36 58 36 70 48 86 Z M10 48 C26 36 38 36 48 48 C38 60 26 60 10 48 Z M86 48 C70 36 58 36 48 48 C58 60 70 60 86 48 Z" fill="none" stroke="#141B4E" stroke-width="1.2"></path></pattern></defs>
+<rect width="100%" height="100%" fill="url(#tr-p)"></rect>
+</svg>
+<div style="position: relative; max-width: 1320px; margin: 0 auto; padding: 0 32px; box-sizing: border-box">
+
+<header style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 0 10px; flex-wrap: wrap">
+<a href="#" style="text-decoration: none; color: #EEF1F8; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1; letter-spacing: -0.02em">Mouhamed Lamotte</span><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">UNDEFINED.DEV</span></a>
+<nav class="navl" style="display: flex; gap: 34px; font-size: 15px">
+<a href="#projets">Projets</a><a href="#stack">Stack</a><a href="#changelog">Parcours</a><a href="#contact">Contact</a>
+</nav>
+<a class="btn" href="#contact" style="color: #EEF1F8; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; border: 2px dashed #8C93BF">Me contacter</a>
+</header>
+
+<section style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch; padding: 32px 0 72px">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 00 · LE DÉVELOPPEUR · DAKAR</div>
+<h1 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(64px, 8.6vw, 150px); line-height: 0.86; letter-spacing: -0.04em">On ne naît pas développeur.<br><em style="color: #F2604A">On se construit, version par version.</em></h1>
+<p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; max-width: 560px; color: #C9CFEA">Moi c'est Mouhamed, développeur front-end à Dakar. Je fais des interfaces, des SaaS et des apps, et j'ai monté The Nexcom pour les faire pour les autres.</p>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #CDEBDD"><span style="width: 10px; height: 10px; border-radius: 50%; background: #CDEBDD"></span>Disponible pour des projets, via nexcom</div>
+</div>
+
+<div class="who" style="flex: 1 1 420px; min-width: 300px; position: relative; isolation: isolate; background: #0C1029; aspect-ratio: 1122 / 1402; max-height: 760px">
+<img class="blend" src="../../da/personnage/personnage.png" alt="Illustration de Mouhamed, un jeune développeur à lunettes dont la tenue porte des annotations de construction en pointillé" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain">
+<div style="position: absolute; left: -4%; top: 25%; display: flex; flex-direction: column; gap: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em"><span>COMPOSANT 00 · HUMAIN</span><span style="color: #8C93BF">VERSION BÊTA</span></div>
+<div class="lbl" style="position: absolute; left: 62%; top: 8%; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #F2604A; white-space: nowrap"><span style="width: 36px; border-top: 1.5px dashed #F2604A"></span>LUNETTES · MODE DEBUG</div>
+<div class="lbl" style="position: absolute; left: 66%; top: 40%; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #F2604A; white-space: nowrap"><span style="width: 36px; border-top: 1.5px dashed #F2604A"></span>MANCHES · RETROUSSÉES</div>
+<div class="lbl" style="position: absolute; left: 62%; top: 90%; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #F2604A; white-space: nowrap"><span style="width: 36px; border-top: 1.5px dashed #F2604A"></span>BASKETS · PRÊTES À DÉPLOYER</div>
+<div style="position: absolute; right: 0; bottom: 2%; font-family: 'Reenie Beanie', cursive; font-size: 28px; color: #FFE7A3; transform: rotate(-4deg)">survole-moi</div>
+</div>
+</section>
+
+<section style="padding: 56px 0; border-top: 1.5px dashed #2E3A8A; border-bottom: 1.5px dashed #2E3A8A; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: baseline">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; flex: 0 0 auto">MODULE 01 · LA BIO</div>
+<p style="margin: 0; flex: 1 1 600px; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(32px, 3.6vw, 56px); line-height: 1.08; letter-spacing: -0.02em">Je transforme des idées en code… <span style="color: #8C93BF">que personne n'utilisera.</span> Bon, sauf <em style="color: #F2604A">Salonify</em>. Et ton projet, peut-être.</p>
+</section>
+
+<section id="projets" style="padding: 96px 0 40px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(52px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.03em">Ce que <em style="color: #F2604A">j'ai construit.</em></h2>
+<div style="font-family: 'Reenie Beanie', cursive; font-size: 32px; color: #FFE7A3; transform: rotate(-3deg)">et tout est sur GitHub</div>
+</div>
+<div style="display: flex; flex-direction: column">
+<a class="proj" href="#" style="text-decoration: none; color: #EEF1F8; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; padding: 28px 16px; border-top: 1.5px dashed #2E3A8A">
+<span class="pn" style="font-family: 'Instrument Serif', Georgia, serif; font-size: 80px; line-height: 1; color: #8C93BF; transition: color .25s; flex: 0 0 110px">01</span>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1">Salonify</span><span style="font-size: 16px; line-height: 1.5; color: #C9CFEA">Le SaaS de gestion des salons de coiffure. Web, mobile, paiements.</span></div>
+<span style="flex: 0 0 240px; aspect-ratio: 16 / 10; border: 2px dashed #8C93BF; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8C93BF">[CAPTURE]</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; flex: 0 0 auto">NEXT.JS · NESTJS · FLUTTER</span>
+</a>
+<a class="proj" href="#" style="text-decoration: none; color: #EEF1F8; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; padding: 28px 16px; border-top: 1.5px dashed #2E3A8A">
+<span class="pn" style="font-family: 'Instrument Serif', Georgia, serif; font-size: 80px; line-height: 1; color: #8C93BF; transition: color .25s; flex: 0 0 110px">02</span>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1">Nexpay</span><span style="font-size: 16px; line-height: 1.5; color: #C9CFEA">Open source : brancher le mobile money dans une app.</span></div>
+<span style="flex: 0 0 240px; aspect-ratio: 16 / 10; border: 2px dashed #8C93BF; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8C93BF">[CAPTURE]</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; flex: 0 0 auto">TYPESCRIPT · OPEN SOURCE</span>
+</a>
+<a class="proj" href="#" style="text-decoration: none; color: #EEF1F8; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; padding: 28px 16px; border-top: 1.5px dashed #2E3A8A">
+<span class="pn" style="font-family: 'Instrument Serif', Georgia, serif; font-size: 80px; line-height: 1; color: #8C93BF; transition: color .25s; flex: 0 0 110px">03</span>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1">jobFlow</span><span style="font-size: 16px; line-height: 1.5; color: #C9CFEA">[UNE PHRASE SUR LE PROJET]</span></div>
+<span style="flex: 0 0 240px; aspect-ratio: 16 / 10; border: 2px dashed #8C93BF; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8C93BF">[CAPTURE]</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; flex: 0 0 auto">TYPESCRIPT</span>
+</a>
+<a class="proj" href="#" style="text-decoration: none; color: #EEF1F8; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; padding: 28px 16px; border-top: 1.5px dashed #2E3A8A; border-bottom: 1.5px dashed #2E3A8A">
+<span class="pn" style="font-family: 'Instrument Serif', Georgia, serif; font-size: 80px; line-height: 1; color: #8C93BF; transition: color .25s; flex: 0 0 110px">04</span>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1">react-dev-notes</span><span style="font-size: 16px; line-height: 1.5; color: #C9CFEA">Mes notes React, partagées.</span></div>
+<span style="flex: 0 0 240px; aspect-ratio: 16 / 10; border: 2px dashed #8C93BF; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8C93BF">[CAPTURE]</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF; flex: 0 0 auto">REACT · NOTES</span>
+</a>
+</div>
+</section>
+
+<section id="stack" style="padding: 80px 0 40px; display: flex; flex-direction: column; gap: 36px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(52px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.03em">Dans <em style="color: #F2604A">ma boîte à outils.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
+<div style="background: #131843; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">FRONT</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.05">Next.js, React, Angular</div></div>
+<div style="background: #131843; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">BACK</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.05">NestJS, PostgreSQL</div></div>
+<div style="background: #131843; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MOBILE</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.05">Flutter</div></div>
+<div style="background: #131843; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">INFRA</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.05">Docker, Terraform, VPS</div></div>
+</div>
+</section>
+
+<section id="changelog" style="padding: 80px 0 40px; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 04 · CHANGELOG</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(52px, 6vw, 96px); line-height: 0.9; letter-spacing: -0.03em">Les <em style="color: #F2604A">versions</em> de moi.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #C9CFEA">Mon parcours, écrit comme des notes de version. Les dates sont à remplir.</p>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; border-left: 2px solid #2E3A8A">
+<div style="position: relative; padding: 0 0 36px 32px"><span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; background: #F2604A"></span><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #F2604A">AUJOURD'HUI · VERSION ACTUELLE</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.1; margin-top: 6px">Fondateur de The Nexcom, Salonify en lancement</div></div>
+<div style="position: relative; padding: 0 0 36px 32px"><span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; background: #0C1029; border: 2px solid #8C93BF; box-sizing: border-box"></span><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">[ANNÉE]</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.1; margin-top: 6px">Développeur front-end sur des plateformes Angular</div><div style="font-size: 15px; color: #8C93BF; margin-top: 4px">[À CONFIRMER : ce que tu veux montrer de ton poste]</div></div>
+<div style="position: relative; padding: 0 0 36px 32px"><span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; background: #0C1029; border: 2px solid #8C93BF; box-sizing: border-box"></span><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">[ANNÉE]</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.1; margin-top: 6px">Nexpay, premier projet open source</div></div>
+<div style="position: relative; padding: 0 0 0 32px"><span style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; background: #0C1029; border: 2px dashed #8C93BF; box-sizing: border-box"></span><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">V0.0.1 · [ANNÉE]</div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; line-height: 1.1; margin-top: 6px">Premier « Hello world »</div></div>
+</div>
+</section>
+
+<section id="contact" style="margin: 96px 0 0; border: 3px dashed #EEF1F8; padding: clamp(32px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; position: relative">
+<div style="position: absolute; left: -10px; top: -10px; width: 18px; height: 18px; background: #F2604A"></div>
+<div style="position: absolute; right: -10px; bottom: -10px; width: 18px; height: 18px; background: #F2604A"></div>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C93BF">MODULE 05 · CONTACT</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(56px, 8vw, 136px); line-height: 0.86; letter-spacing: -0.04em">Un projet ?<br><em style="color: #F2604A">Ça passe par nexcom.</em></h2>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px">
+<a class="btn" href="#" style="background: #F2604A; color: #0C1029; padding: 18px 28px; border-radius: 999px; font-size: 17px; font-weight: 700">Aller sur nexcom</a>
+<a class="btn" href="#" style="color: #EEF1F8; padding: 16px 26px; border-radius: 999px; font-size: 17px; font-weight: 600; border: 2px dashed #8C93BF">Juste discuter</a>
+</div>
+</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px; font-size: 16px">
+<a href="#" style="text-decoration: none">GitHub · mouhamedlamotte</a>
+<a href="#" style="text-decoration: none">LinkedIn</a>
+<a href="#" style="text-decoration: none">X · @undefinedxdev</a>
+<a href="#" style="text-decoration: none">Instagram · undefined.dev_</a>
+</div>
+</section>
+
+<footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 40px 0 48px; font-size: 13px; color: #8C93BF; letter-spacing: 0.04em">
+<span style="display: inline-flex; align-items: center; gap: 8px">Mouhamed Lamotte <svg aria-hidden="true" width="12" height="12" viewBox="0 0 100 100"><polygon points="0,0 22,0 52,50 22,100 0,100 27,50" fill="#F2604A"></polygon><polygon points="100,0 78,0 48,50 78,100 100,100 73,50" fill="#F2604A"></polygon></svg> undefined.dev</span>
+<span>Dakar, Sénégal</span>
+</footer>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

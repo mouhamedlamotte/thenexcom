@@ -1,0 +1,408 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-12T07:25:00Z"
+ },
+ "title": "DA — Mouhamed Lamotte × The Nexcom",
+ "launch": {
+  "view": "focused",
+  "file": "NexcomLanding.dc.html"
+ },
+ "pages": [
+  {
+   "id": "sites",
+   "name": "Sites · maquettes"
+  },
+  {
+   "id": "da",
+   "name": "DA · Sur mesure"
+  },
+  {
+   "id": "archives",
+   "name": "Explorations"
+  }
+ ],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "title": "01 · Sur mesure (couverture)",
+   "page": "da"
+  },
+  "Palette.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "title": "02 · Palette",
+   "page": "da"
+  },
+  "Typo.dc.html": {
+   "x": 0,
+   "y": 1020,
+   "w": 1440,
+   "h": 900,
+   "title": "03 · Typographie",
+   "page": "da"
+  },
+  "Marques.dc.html": {
+   "x": 1520,
+   "y": 1020,
+   "w": 1440,
+   "h": 900,
+   "title": "04 · Marques du plan",
+   "page": "da"
+  },
+  "AfficheAtelier.dc.html": {
+   "x": 0,
+   "y": 2160,
+   "w": 1080,
+   "h": 1350,
+   "title": "Affiche · The Nexcom",
+   "page": "da"
+  },
+  "AfficheTailleur.dc.html": {
+   "x": 1160,
+   "y": 6260,
+   "w": 1080,
+   "h": 1350,
+   "title": "Affiche · Mouhamed",
+   "page": "archives"
+  },
+  "AfficheTabaski.dc.html": {
+   "x": 1160,
+   "y": 2160,
+   "w": 1080,
+   "h": 1350,
+   "title": "Affiche · version claire",
+   "page": "da"
+  },
+  "Charte.dc.html": {
+   "x": 1360,
+   "y": 0,
+   "w": 1200,
+   "h": 900,
+   "title": "Combinée · la charte",
+   "page": "archives"
+  },
+  "TailleurConcept.dc.html": {
+   "x": 2880,
+   "y": 0,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur v1 · 01 L'atelier",
+   "page": "archives"
+  },
+  "TailleurLogo.dc.html": {
+   "x": 4160,
+   "y": 0,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur v1 · 02 Le bouton",
+   "page": "archives"
+  },
+  "TailleurRuban.dc.html": {
+   "x": 2880,
+   "y": 880,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur v1 · 03 Ruban",
+   "page": "archives"
+  },
+  "TailleurSysteme.dc.html": {
+   "x": 4160,
+   "y": 880,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur v1 · 04 Le système",
+   "page": "archives"
+  },
+  "TailleurSite.dc.html": {
+   "x": 2880,
+   "y": 1760,
+   "w": 1280,
+   "h": 2900,
+   "title": "Tailleur v1 · 05 Le site",
+   "expand": "fill",
+   "page": "archives"
+  },
+  "Gelee.dc.html": {
+   "x": 0,
+   "y": 5100,
+   "w": 1200,
+   "h": 900,
+   "title": "Piste A · Gelée",
+   "is_interactive": true,
+   "page": "archives"
+  },
+  "Bureau.dc.html": {
+   "x": 1280,
+   "y": 5100,
+   "w": 1200,
+   "h": 900,
+   "title": "Piste B · Le Bureau",
+   "is_interactive": true,
+   "page": "archives"
+  },
+  "Kiosque.dc.html": {
+   "x": 2560,
+   "y": 5100,
+   "w": 1200,
+   "h": 900,
+   "title": "Piste C · Kiosque",
+   "page": "archives"
+  },
+  "GloockConcept.dc.html": {
+   "x": 5520,
+   "y": 0,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur + Gloock · 01 L'atelier",
+   "page": "archives"
+  },
+  "GloockLogo.dc.html": {
+   "x": 6800,
+   "y": 0,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur + Gloock · 02 Le bouton",
+   "page": "archives"
+  },
+  "GloockRuban.dc.html": {
+   "x": 5520,
+   "y": 880,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur + Gloock · 03 Ruban",
+   "page": "archives"
+  },
+  "GloockSysteme.dc.html": {
+   "x": 6800,
+   "y": 880,
+   "w": 1200,
+   "h": 760,
+   "title": "Tailleur + Gloock · 04 Le système",
+   "page": "archives"
+  },
+  "GloockSite.dc.html": {
+   "x": 5520,
+   "y": 1760,
+   "w": 1280,
+   "h": 2900,
+   "title": "Tailleur + Gloock · 05 Le site",
+   "expand": "fill",
+   "page": "archives"
+  },
+  "Combinee.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 3300,
+   "title": "Combinée · le site (couleurs tailleur)",
+   "expand": "fill",
+   "is_interactive": true,
+   "page": "archives"
+  },
+  "AffichePatron.dc.html": {
+   "x": 3480,
+   "y": 6260,
+   "w": 1080,
+   "h": 1350,
+   "title": "Affiche · le personnage-patron",
+   "page": "archives"
+  },
+  "AffichePersonnage.dc.html": {
+   "x": 2320,
+   "y": 2160,
+   "w": 1080,
+   "h": 1350,
+   "title": "Affiche · le personnage",
+   "page": "da"
+  },
+  "Logos.dc.html": {
+   "x": 0,
+   "y": 6300,
+   "w": 1440,
+   "h": 1100,
+   "title": "05 · Le logo : la sélection",
+   "page": "archives"
+  },
+  "Logos2.dc.html": {
+   "x": 1520,
+   "y": 6300,
+   "w": 1440,
+   "h": 1100,
+   "title": "05b · Logos typographiques",
+   "page": "archives"
+  },
+  "Logo.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 1100,
+   "title": "05 · Le logo : les chevrons",
+   "page": "da"
+  },
+  "SiteNexcom.dc.html": {
+   "x": 4680,
+   "y": 0,
+   "w": 1440,
+   "h": 4300,
+   "title": "nexcom · version sections (référence)",
+   "page": "sites",
+   "expand": "fill"
+  },
+  "SitePortfolio.dc.html": {
+   "x": 6240,
+   "y": 0,
+   "w": 1440,
+   "h": 4300,
+   "title": "Mouhamed Lamotte · portfolio",
+   "page": "sites",
+   "expand": "fill"
+  },
+  "NexcomConversation.dc.html": {
+   "x": 3120,
+   "y": 0,
+   "w": 1440,
+   "h": 1200,
+   "title": "nexcom · version conversation (écartée)",
+   "page": "sites",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "NexcomHistoire.dc.html": {
+   "x": 1560,
+   "y": 0,
+   "w": 1440,
+   "h": 7100,
+   "title": "nexcom · version histoire (précédente)",
+   "page": "sites",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "NexcomLanding.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 6600,
+   "title": "nexcom · landing (héros, qui, services, réalisations, méthode)",
+   "page": "sites",
+   "expand": "fill",
+   "is_interactive": true
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "NexcomLanding.dc.html",
+  "NexcomHistoire.dc.html",
+  "NexcomConversation.dc.html",
+  "SiteNexcom.dc.html",
+  "SitePortfolio.dc.html",
+  "Palette.dc.html",
+  "Typo.dc.html",
+  "Marques.dc.html",
+  "Logo.dc.html",
+  "Logos.dc.html",
+  "Logos2.dc.html",
+  "AfficheAtelier.dc.html",
+  "AfficheTailleur.dc.html",
+  "AfficheTabaski.dc.html",
+  "AffichePatron.dc.html",
+  "AffichePersonnage.dc.html",
+  "Charte.dc.html",
+  "TailleurConcept.dc.html",
+  "TailleurLogo.dc.html",
+  "TailleurRuban.dc.html",
+  "TailleurSysteme.dc.html",
+  "TailleurSite.dc.html",
+  "Gelee.dc.html",
+  "Bureau.dc.html",
+  "Kiosque.dc.html",
+  "GloockConcept.dc.html",
+  "GloockLogo.dc.html",
+  "GloockRuban.dc.html",
+  "GloockSysteme.dc.html",
+  "GloockSite.dc.html",
+  "Combinee.dc.html"
+ ],
+ "notes": {
+  "intro": {
+   "x": 0,
+   "y": -300,
+   "text": "Combinée : tailleur + gelée + bureau + Gloock",
+   "kind": "title1",
+   "maxW": 2560,
+   "page": "archives",
+   "w": 240
+  },
+  "v1": {
+   "x": 2880,
+   "y": -300,
+   "text": "Première version des tailleurs (mise de côté)",
+   "kind": "title1",
+   "maxW": 2480,
+   "page": "archives",
+   "w": 240
+  },
+  "pistes": {
+   "x": 0,
+   "y": 4800,
+   "text": "Pistes explorées",
+   "kind": "title1",
+   "maxW": 3760,
+   "page": "archives",
+   "w": 240
+  },
+  "gloock": {
+   "x": 5520,
+   "y": -300,
+   "text": "Tailleur + Gloock",
+   "kind": "title1",
+   "maxW": 2480,
+   "page": "archives",
+   "w": 240
+  },
+  "da1": {
+   "x": 0,
+   "y": -300,
+   "text": "La DA",
+   "kind": "title1",
+   "maxW": 4480,
+   "page": "da",
+   "w": 240
+  },
+  "da2": {
+   "x": 0,
+   "y": 1860,
+   "text": "Les affiches",
+   "kind": "title1",
+   "maxW": 3400,
+   "page": "da",
+   "w": 240
+  },
+  "sites": {
+   "x": 0,
+   "y": -300,
+   "text": "Les deux sites",
+   "kind": "title1",
+   "maxW": 7680,
+   "page": "sites",
+   "w": 240
+  }
+ },
+ "designSystems": [],
+ "attachments": {},
+ "noteOrder": [
+  "intro",
+  "v1",
+  "pistes",
+  "gloock",
+  "da1",
+  "da2",
+  "sites"
+ ]
+}

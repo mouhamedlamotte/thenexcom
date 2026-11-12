@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Affiche : le personnage</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.blend{mix-blend-mode:screen}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; background: #0C1029; color: #EEF1F8; font-family: 'Hanken Grotesk', system-ui, sans-serif; position: relative; overflow: hidden; isolation: isolate">
+<svg aria-hidden="true" width="1080" height="1350" style="position: absolute; inset: 0">
+<defs>
+<pattern id="damask-pc" width="96" height="96" patternUnits="userSpaceOnUse">
+<path d="M48 10 C60 26 60 38 48 48 C36 38 36 26 48 10 Z M48 86 C60 70 60 58 48 48 C36 58 36 70 48 86 Z M10 48 C26 36 38 36 48 48 C38 60 26 60 10 48 Z M86 48 C70 36 58 36 48 48 C58 60 70 60 86 48 Z" fill="none" stroke="#18205A" stroke-width="1.5"></path>
+</pattern>
+</defs>
+<rect width="1080" height="1350" fill="url(#damask-pc)"></rect>
+</svg>
+<img class="blend" src="../../da/personnage/personnage.png" alt="Le personnage : un jeune homme à lunettes dont la tenue porte des annotations de construction en pointillé" style="position: absolute; left: 214px; top: 88px; width: 1010px; height: 1262px">
+<svg aria-hidden="true" width="1080" height="1350" style="position: absolute; inset: 0">
+<path d="M1040 124 V1320 M1028 124 H1052 M1028 1320 H1052 M1040 124 l-6 12 M1040 124 l6 12 M1040 1320 l-6 -12 M1040 1320 l6 -12" fill="none" stroke="#8C93BF" stroke-width="1.5"></path>
+<rect x="1028" y="640" width="24" height="170" fill="#0C1029"></rect>
+<text x="1046" y="725" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="600" letter-spacing="2" fill="#8C93BF" transform="rotate(-90 1046 725)">HAUTEUR : AUTO</text>
+<path d="M340 468 C460 468 560 430 626 392" fill="none" stroke="#EEF1F8" stroke-width="1.5" stroke-dasharray="6 6"></path>
+<circle cx="630" cy="390" r="5" fill="#F2604A"></circle>
+<path d="M48 1196 H470" stroke="#EEF1F8" stroke-width="1.5" stroke-dasharray="10 8"></path>
+
+</svg>
+<div style="position: absolute; left: 48px; top: 56px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; letter-spacing: 0.16em; color: #8C93BF"><span>MODULE 00 · LE DÉVELOPPEUR</span><span>UNDEFINED.DEV</span></div>
+<h1 style="position: absolute; left: 44px; top: 100px; margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 96px; line-height: 0.88; letter-spacing: -0.035em; white-space: nowrap">On ne naît pas<br>développeur.</h1>
+<div style="position: absolute; left: 48px; top: 440px; display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em">COMPOSANT 00 · HUMAIN</div>
+<div style="font-size: 13px; font-weight: 500; letter-spacing: 0.16em; color: #8C93BF">VERSION BÊTA · EN CONSTRUCTION</div>
+</div>
+<div style="position: absolute; left: 48px; top: 620px; font-family: 'Instrument Serif', Georgia, serif; font-size: 84px; line-height: 0.92; letter-spacing: -0.03em; color: #F2604A"><em>On se<br>construit,<br>version par<br>version.</em></div>
+<div style="position: absolute; left: 60px; top: 1010px; font-family: 'Reenie Beanie', cursive; font-size: 36px; line-height: 1; color: #FFE7A3; transform: rotate(-4deg)">toujours en bêta</div>
+<div style="position: absolute; left: 48px; bottom: 52px; display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 40px; line-height: 1">Mouhamed Lamotte</div>
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; color: #8C93BF">DÉVELOPPEUR · THE NEXCOM · DAKAR</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

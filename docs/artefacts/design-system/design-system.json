@@ -1,0 +1,94 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-12T10:20:00Z"
+ },
+ "title": "nexcom",
+ "namespace": "nexcom",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Personnage"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "nexcom-logo-fond-sombre.svg",
+    "nexcom-logo-fond-clair.svg",
+    "nexcom-logo-sur-nuit.svg",
+    "nexcom-icone.svg",
+    "nexcom-icone-carre.svg",
+    "nexcom-chevrons-seuls.svg"
+   ],
+   "files": {
+    "nexcom-logo-fond-sombre.svg": {
+     "name": "nexcom-logo-fond-sombre.svg",
+     "blob": "5d6619338c4bf98b4067cc9e5ac7da49",
+     "size": 4165,
+     "type": "image/svg+xml"
+    },
+    "nexcom-logo-fond-clair.svg": {
+     "name": "nexcom-logo-fond-clair.svg",
+     "blob": "31f5fa8904c1170694dc6547730240c4",
+     "size": 4165,
+     "type": "image/svg+xml"
+    },
+    "nexcom-logo-sur-nuit.svg": {
+     "name": "nexcom-logo-sur-nuit.svg",
+     "blob": "7ddc6438f2184991ee6e2b709ee99fc5",
+     "size": 4246,
+     "type": "image/svg+xml"
+    },
+    "nexcom-icone.svg": {
+     "name": "nexcom-icone.svg",
+     "blob": "09cdee279c3f7a73fcc61ca8831014d0",
+     "size": 364,
+     "type": "image/svg+xml"
+    },
+    "nexcom-icone-carre.svg": {
+     "name": "nexcom-icone-carre.svg",
+     "blob": "9a4d0498c6038e29e25a48bb15fa0da4",
+     "size": 362,
+     "type": "image/svg+xml"
+    },
+    "nexcom-chevrons-seuls.svg": {
+     "name": "nexcom-chevrons-seuls.svg",
+     "blob": "3180f124fd1a72eff03d3c1a949fd99a",
+     "size": 300,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Personnage": {
+   "name": "Personnage",
+   "tile": "l",
+   "order": [
+    "personnage.png"
+   ],
+   "files": {
+    "personnage.png": {
+     "name": "personnage.png",
+     "blob": "796e4284aa8e5c67df6ff02d96d6b436",
+     "size": 1802881,
+     "type": "image/png"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Mouhamed Lamotte",
+  "at": "2026-11-12T10:20:00Z",
+  "via": "Claude (chat)",
+  "note": "Première version de la DA nexcom : couleurs, typo, marques du plan, logo, personnage."
+ }
+}
