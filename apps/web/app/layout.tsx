@@ -56,7 +56,7 @@ const reenieBeanie = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Solutions informatiques à Dakar`,
+    default: `${site.name} — Agence de développement à Dakar`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -66,7 +66,6 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: site.name }],
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
@@ -78,7 +77,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${instrumentSerif.variable} ${hankenGrotesk.variable} ${reenieBeanie.variable}`}>
+    <html
+      lang="fr"
+      className={`${instrumentSerif.variable} ${hankenGrotesk.variable} ${reenieBeanie.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

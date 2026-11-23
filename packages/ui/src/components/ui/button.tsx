@@ -1,26 +1,35 @@
 import type { AnchorHTMLAttributes } from "react";
 import { cn } from "../../lib/cn";
 
-type Variant = "primary" | "ink" | "outline" | "outline-light";
+type Variant = "plein" | "pointille";
+type Size = "md" | "lg" | "xl";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-cobalt text-paper hover:bg-cobalt-deep",
-  ink: "bg-ink text-paper hover:bg-body",
-  outline: "border border-ink/20 text-ink hover:border-ink hover:bg-ink/5",
-  "outline-light": "border border-paper/25 text-paper hover:border-paper hover:bg-paper/10",
+  /* Corail plein, texte nuit (5,8:1). */
+  plein: "bg-corail text-nuit font-bold",
+  /* Contour en pointillé : un élément « en cours », la marque du plan. */
+  pointille: "border-2 border-dashed border-ardoise text-craie font-semibold hover:border-craie",
 };
 
-/** Lien stylé en bouton (le site n'a que des liens d'action : e-mail, WhatsApp, ancres). */
+const sizes: Record<Size, string> = {
+  md: "min-h-11 px-[22px] text-[15px]",
+  lg: "min-h-14 px-7 text-[17px]",
+  xl: "min-h-16 px-8 text-[18px]",
+};
+
+/** Lien en forme de pilule (le site n'a que des liens d'action : WhatsApp, e-mail, ancres). */
 export function ButtonLink({
-  variant = "primary",
+  variant = "plein",
+  size = "md",
   className,
   ...props
-}: AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: Variant }) {
+}: AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: Variant; size?: Size }) {
   return (
     <a
       className={cn(
-        "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 text-[15px] font-semibold transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-pill transition-transform duration-200 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0",
         variants[variant],
+        sizes[size],
         className,
       )}
       {...props}

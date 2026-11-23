@@ -8,9 +8,9 @@ Contexte pour travailler sur ce dépôt avec Claude Code.
 
 Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed vivra d'abord ici aussi.
 
-## En cours : migration vers la DA « Sur mesure »
+## DA « Sur mesure »
 
-Une nouvelle direction artistique a été validée le 12/11/2026. Elle remplace la DA v1 (cobalt / papier / Bricolage Grotesque / vouvoiement) encore en place dans `packages/ui/src/styles/globals.css` et `apps/web`.
+Direction artistique validée le 12/11/2026. Elle a remplacé la DA v1 (cobalt / papier / Bricolage Grotesque / vouvoiement) : tokens dans `packages/ui/src/styles/globals.css`, landing réécrite dans `apps/web/components/site/`.
 
 À lire avant toute modification visuelle :
 1. `docs/da/README.md` : le guide de marque (logo, couleurs, typo, marques du plan, personnage, ton).
@@ -29,13 +29,13 @@ Une nouvelle direction artistique a été validée le 12/11/2026. Elle remplace 
 - Pas de sections empilées banales : chaque section a son geste (voir la maquette).
 - Contraste 4.5:1 minimum pour le texte, `prefers-reduced-motion` respecté.
 
-### Plan de migration suggéré
+### État de la migration
 
-1. Remplacer les tokens de `packages/ui/src/styles/globals.css` par ceux de `docs/da/tokens.css` (garder la structure `@theme inline` de Tailwind 4) et changer les polices dans `apps/web/app/layout.tsx`.
-2. Remplacer le logo de `packages/ui` par les SVG de `docs/da/logo/`, régénérer `icon.png`, `apple-icon.png` et `og.png`.
-3. Réécrire les sections de `apps/web/components/site/` selon `docs/maquettes/landing-nexcom.md` ; passer `lib/content.ts` au tutoiement.
-4. Mettre à jour le README (section Direction artistique).
-5. Ensuite, le portfolio.
+1. ~~Tokens et polices~~ : fait.
+2. ~~Logo, `icon.png`, `apple-icon.png`, image OG~~ : fait (`opengraph-image.tsx` génère l'OG au build).
+3. ~~Sections de la landing selon la maquette, `lib/content.ts` au tutoiement~~ : fait.
+4. ~~README~~ : fait.
+5. Reste : le portfolio. À compléter sur la landing : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram.
 
 ## Commandes
 

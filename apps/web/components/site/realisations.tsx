@@ -1,155 +1,93 @@
 import Image from "next/image";
-import { nexpayFeatures, salonifyFeatures, salonifySteps, stack } from "@/lib/content";
+import { projets } from "@/lib/content";
 import { SectionLabel } from "./section-label";
 
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="rounded-md bg-ink px-3 py-1.5 font-mono text-[12px] tracking-[0.15em] text-paper uppercase">
-      {children}
-    </span>
-  );
-}
-
+/** 04 · Réalisations : déjà en ligne. */
 export function Realisations() {
+  const { salonify, nexpay } = projets;
   return (
-    <section id="realisations" className="scroll-mt-20 border-t border-line">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-20 sm:px-6 md:py-28">
-        <div className="flex flex-col gap-6">
-          <SectionLabel index="03">Nos réalisations</SectionLabel>
-          <h2 className="max-w-3xl font-display text-4xl leading-[1.02] font-extrabold tracking-[-0.03em] sm:text-5xl">
-            Des produits en service, pas des maquettes.
-          </h2>
-        </div>
+    <section
+      id="realisations"
+      data-scene
+      className="relative border-t-[1.5px] border-dashed border-ligne pt-[110px] pb-[90px]"
+    >
+      <div className="flex items-center justify-between">
+        <SectionLabel>04 · Réalisations</SectionLabel>
+        <p className="flex items-center gap-2 text-[12px] font-bold tracking-[0.16em] text-menthe">
+          <span aria-hidden className="en-ligne size-2.5 rounded-full bg-menthe" />
+          EN LIGNE
+        </p>
+      </div>
+      <h2 className="mt-4 font-display text-[clamp(72px,21vw,360px)] leading-[0.8] tracking-[-0.06em]">
+        Déjà en <em className="text-corail">ligne.</em>
+      </h2>
 
-        {/* Salonify */}
-        <article className="flex flex-col gap-8 rounded-[28px] border border-line bg-white p-6 sm:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-wrap items-center gap-3">
-                <h3 className="font-display text-4xl font-extrabold tracking-[-0.03em]">Salonify</h3>
-                <Tag>SaaS · web + mobile</Tag>
-              </div>
-              <p className="text-lg leading-relaxed text-body">
-                Les salons de coiffure tenaient leur caisse et leur équipe dans un cahier. Salonify met la
-                gestion du salon dans une application mobile et un tableau de bord web : chaque prestation
-                saisie, la caisse à jour, les parts de l'équipe prêtes.
-              </p>
-              <ul className="flex flex-col border-t border-line">
-                {salonifyFeatures.map((f) => (
-                  <li key={f} className="border-b border-line py-3 text-[16px]">
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <p className="font-mono text-[12px] tracking-[0.12em] text-slate uppercase">
-                Édité et exploité par The Nexcom · captures réelles, données de démonstration
-              </p>
-            </div>
-
-            <ol className="grid grid-cols-3 gap-3 sm:gap-5">
-              {salonifySteps.map((s, i) => (
-                <li key={s.title} className="flex flex-col gap-3">
-                  <div className="flex flex-col items-start gap-2 sm:flex-row">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-cobalt font-display text-sm font-extrabold text-cobalt">
-                      {i + 1}
-                    </span>
-                    <span className="text-[13px] leading-snug font-semibold sm:text-[15px]">{s.title}</span>
-                  </div>
-                  <Image
-                    src={s.image}
-                    alt={s.alt}
-                    width={560}
-                    height={1223}
-                    sizes="(min-width: 1024px) 200px, 30vw"
-                    className="w-full rounded-[18px] border-[3px] border-ink"
-                  />
-                </li>
-              ))}
-            </ol>
+      <article className="mt-14 flex flex-wrap items-center gap-10">
+        <div className="relative min-w-0 flex-[999_1_560px]">
+          <div
+            aria-hidden
+            className="mb-2.5 flex items-center gap-2.5 text-[11px] font-bold tracking-[0.16em] text-ardoise"
+          >
+            <span className="h-3.5 border-l-[1.5px] border-current" />
+            <span className="grow border-t-[1.5px] border-current" />
+            <span>{salonify.capture.largeur} PX</span>
+            <span className="grow border-t-[1.5px] border-current" />
+            <span className="h-3.5 border-l-[1.5px] border-current" />
           </div>
-
-          <div className="relative overflow-hidden rounded-[20px] bg-cobalt p-4 sm:p-8">
+          <div className="capture mv relative aspect-[16/10] overflow-hidden border-[3px] border-craie bg-nuit-relief">
             <Image
-              src="/img/dashboard.webp"
+              src={salonify.capture.src}
               alt="Tableau de bord web de Salonify : chiffre d'affaires, caisse et équipe"
-              width={1400}
-              height={788}
-              sizes="(min-width: 1152px) 1050px, 100vw"
-              className="w-full rounded-xl border-4 border-ink"
+              fill
+              sizes="(min-width: 1400px) 820px, (min-width: 900px) 60vw, 100vw"
+              className="object-cover object-left-top"
             />
           </div>
-        </article>
-
-        {/* NexPay + outils */}
-        <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
-          <article className="flex flex-col gap-6 rounded-[28px] bg-cobalt p-6 text-paper sm:p-10">
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="font-display text-4xl font-extrabold tracking-[-0.03em]">NexPay</h3>
-              <span className="rounded-md bg-paper/15 px-3 py-1.5 font-mono text-[12px] tracking-[0.15em] uppercase">
-                Open source
-              </span>
-            </div>
-            <p className="text-lg leading-relaxed text-mist">
-              Chaque moyen de paiement mobile a sa propre intégration. NexPay les réunit derrière une seule
-              API : Wave, Orange Money, et d'autres opérateurs à venir.
-            </p>
-
-            <div className="grid items-center gap-3 sm:grid-cols-[1fr_auto_1.1fr_auto_1fr]">
-              <div className="flex flex-col gap-2">
-                {["Wave", "Orange Money", "Autres opérateurs"].map((o) => (
-                  <span key={o} className="rounded-xl bg-paper px-4 py-3 text-center font-semibold text-ink">
-                    {o}
-                  </span>
-                ))}
-              </div>
-              <Arrow />
-              <div className="rounded-2xl border-2 border-paper/40 bg-cobalt-deep px-4 py-6 text-center">
-                <p className="font-display text-3xl font-extrabold">NexPay</p>
-                <p className="mt-1 text-[13px] text-mist">Une seule API</p>
-              </div>
-              <Arrow />
-              <span className="rounded-xl bg-ink px-4 py-3 text-center font-semibold">Votre application</span>
-            </div>
-
-            <ul className="flex flex-wrap gap-2">
-              {nexpayFeatures.map((f) => (
-                <li key={f} className="rounded-full bg-paper/12 px-3 py-1.5 text-[14px] text-mist">
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="flex flex-col gap-5 rounded-[28px] border border-line bg-white p-6 sm:p-10">
-            <p className="font-mono text-[12px] tracking-[0.2em] text-slate uppercase">Nos outils</p>
-            <h3 className="font-display text-3xl font-extrabold tracking-[-0.02em]">
-              Une pile moderne, maîtrisée de bout en bout.
-            </h3>
-            <ul className="flex flex-wrap gap-2">
-              {stack.map((t) => (
-                <li key={t} className="rounded-full border border-line px-3 py-1.5 text-[14px]">
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </article>
         </div>
+        <div className="flex flex-[1_1_320px] flex-col gap-4">
+          <p className="text-[12px] font-bold tracking-[0.16em] text-ardoise uppercase">{salonify.module}</p>
+          <h3 className="font-display text-[76px] leading-[0.9]">{salonify.nom}</h3>
+          <p className="text-[18px] leading-[1.55] text-[#C9CFEA]">{salonify.texte}</p>
+          <a
+            href={salonify.lien}
+            target="_blank"
+            rel="noopener"
+            className="text-[16px] font-bold text-corail hover:text-craie"
+          >
+            {salonify.lienTexte} →
+          </a>
+        </div>
+      </article>
+
+      <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-[18px]">
+        <article className="flex min-h-[240px] flex-col gap-3 bg-nuit-relief p-[30px]">
+          <p className="text-[12px] font-bold tracking-[0.16em] text-ardoise uppercase">{nexpay.module}</p>
+          <h3 className="font-display text-[56px] leading-[0.9]">{nexpay.nom}</h3>
+          <p className="text-[16px] leading-[1.55] text-[#C9CFEA]">{nexpay.texte}</p>
+          <a
+            href={nexpay.lien}
+            target="_blank"
+            rel="noopener"
+            className="mt-auto text-[15px] font-bold text-corail hover:text-craie"
+          >
+            {nexpay.lienTexte} →
+          </a>
+        </article>
+        <a
+          href="#contact"
+          className="flex min-h-[240px] flex-col gap-3 border-[3px] border-dashed border-ardoise p-[30px] text-craie hover:border-craie"
+        >
+          <p className="text-[12px] font-bold tracking-[0.16em] text-ardoise uppercase">
+            Module 03 · En attente
+          </p>
+          <p className="font-display text-[56px] leading-[0.9]">
+            Ton projet<span className="text-corail"> ?</span>
+          </p>
+          <p className="text-[16px] leading-[1.55] text-[#C9CFEA]">
+            Ce cadre est vide. Il attend quelque chose de construit pour toi.
+          </p>
+        </a>
       </div>
     </section>
-  );
-}
-
-function Arrow() {
-  return (
-    <svg viewBox="0 0 40 24" className="mx-auto h-6 w-10 rotate-90 text-paper sm:rotate-0" aria-hidden>
-      <path
-        d="M2 12h32M27 5l8 7-8 7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

@@ -16,7 +16,7 @@ packages/
 
 ## Démarrer
 
-Prérequis : Node 22+ et pnpm 10.
+Prérequis : Node 22+ et pnpm 12.
 
 ```bash
 pnpm install
@@ -27,16 +27,24 @@ pnpm check-types
 
 ## Direction artistique
 
-**Nouvelle DA « Sur mesure » validée (novembre 2026), migration en cours.** Tout est dans `docs/da/` (guide de marque,
-tokens, logo, personnage) et `docs/maquettes/` (landing et portfolio). Voir aussi `CLAUDE.md`.
+DA « Sur mesure » (validée en novembre 2026). Référence complète dans `docs/da/` (guide de marque, tokens, logo,
+personnage) et `docs/maquettes/` (landing et portfolio). Voir aussi `CLAUDE.md`.
 
-En attendant la migration, le site utilise encore la DA v1 : tokens dans `packages/ui/src/styles/globals.css`
-(cobalt, ink, paper), polices Bricolage Grotesque, IBM Plex Sans et IBM Plex Mono.
+- **Tokens** : `packages/ui/src/styles/globals.css`, repris de `docs/da/tokens.json` (source de vérité). Fond `nuit`,
+  texte `craie`, secondaire `ardoise`, un seul accent `corail`. Thèmes Nuit (défaut) et Craie via `data-theme`.
+- **Polices** : Instrument Serif (titres, jamais sous 64 px), Hanken Grotesk (texte, étiquettes), Reenie Beanie (notes
+  à la main), auto-hébergées via `@fontsource` et `next/font/local` (`apps/web/app/layout.tsx`).
+- **Logo** : `packages/ui/src/components/brand/logo.tsx`, tracés repris de `docs/da/logo/` (jamais de x en police).
+  Icônes (`app/icon.png`, `app/apple-icon.png`) copiées de `docs/da/logo/` ; image de partage générée au build par
+  `app/opengraph-image.tsx`.
+- **Animations** : chaque section porte `data-scene` ; `components/site/scene-driver.tsx` y écrit la progression du
+  défilement (`--e`, `--e-vite`) et le CSS (`app/globals.css`) en tire les effets. Sans JavaScript ou avec
+  `prefers-reduced-motion`, tout s'affiche directement à l'état final.
 
 ## Contenu
 
 - Coordonnées, navigation et liens de contact : `apps/web/lib/site.ts`
-- Textes des sections (services, méthode, réalisations) : `apps/web/lib/content.ts`
+- Textes des sections (diff, modules, réalisations, étapes) : `apps/web/lib/content.ts`, au tutoiement
 - Images : `apps/web/public/img` (captures réelles de Salonify Pro, données de démonstration)
 
 Le contact passe par WhatsApp et e-mail (liens pré-remplis), sans formulaire ni base de données.

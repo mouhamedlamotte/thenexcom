@@ -1,1 +1,87 @@
 @import "@repo/ui/globals.css";
+
+/*
+ * Landing « Sur mesure » : mécanique de défilement (docs/maquettes/landing-nexcom.md).
+ * Chaque section porte data-scene. Le composant SceneDriver y écrit :
+ *   --e      progression adoucie, 0 → 1 quand la section entre dans l'écran
+ *   --e-vite la même, un peu plus rapide (tracés, notes)
+ * Valeur par défaut 1 : sans JavaScript ou avec prefers-reduced-motion, tout est à l'état final.
+ */
+[data-scene] {
+  --e: 1;
+  --e-vite: 1;
+}
+
+.mv {
+  transition:
+    transform 0.12s linear,
+    opacity 0.12s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mv {
+    transition: none;
+  }
+}
+
+/* Titres de section : Instrument Serif, jamais sous 64 px. */
+@utility titre-section {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(64px, 11vw, 190px);
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+}
+
+/* 02 · le diff : les paires s'allument l'une après l'autre. */
+.diff-paire {
+  opacity: clamp(0.12, calc((var(--e) - var(--i) * 0.18) / 0.28), 1);
+}
+
+/* 03 · les modules arrivent de directions différentes et s'assemblent. */
+.module {
+  transform: translate(calc((1 - var(--e)) * var(--dx)), calc((1 - var(--e)) * var(--dy)));
+  opacity: max(0.15, var(--e));
+}
+
+/* Traits tracés au défilement (pathLength="1000"). */
+.trace {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: calc((1 - var(--e-vite)) * 1000px);
+}
+.apparait-milieu {
+  opacity: max(0, calc((var(--e-vite) - 0.5) / 0.5));
+}
+.apparait-fin {
+  opacity: max(0, calc((var(--e-vite) - 0.7) / 0.3));
+}
+
+/* 04 · la capture s'éclaire. */
+.capture {
+  opacity: calc(0.3 + 0.7 * var(--e));
+}
+
+@keyframes clignote {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.en-ligne {
+  animation: clignote 1.6s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .en-ligne {
+    animation: none;
+  }
+}
+
+/* 06 · les deux chevrons se rejoignent pour former le x. */
+.chevron-gauche {
+  transform: translateX(calc((var(--e) - 1) * 260px));
+}
+.chevron-droit {
+  transform: translateX(calc((1 - var(--e)) * 260px));
+}

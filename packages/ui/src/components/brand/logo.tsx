@@ -1,52 +1,61 @@
 import { cn } from "../../lib/cn";
 
-/**
- * Le « N » tracé d'un trait ; son extrémité se détache en un point (la connexion).
- * `tone="cobalt"` : carré cobalt + trait papier (usage par défaut).
- * `tone="bare"` : trait seul, couleur héritée (`currentColor`), pour poser sur un aplat cobalt.
+/*
+ * Logo nexcom, DA « Sur mesure » (docs/da/logo/). Tracés repris tels quels des SVG vectorisés :
+ * on n'écrit jamais le x avec une police. Les lettres prennent `currentColor` (craie sur nuit,
+ * nuit sur craie), les chevrons restent toujours en corail.
  */
-export function LogoMark({
-  className,
-  tone = "cobalt",
-  title,
-}: {
-  className?: string;
-  tone?: "cobalt" | "bare";
-  title?: string;
-}) {
-  const stroke = tone === "cobalt" ? "#F4F2EC" : "currentColor";
+
+const CORAIL = "#F2604A";
+
+/** Les deux chevrons `><` seuls (icône, grands formats). Couleur fixe : corail. */
+export function LogoMark({ className, title }: { className?: string; title?: string }) {
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="220 220 560 560"
       className={cn("shrink-0", className)}
       role={title ? "img" : undefined}
       aria-label={title}
       aria-hidden={title ? undefined : true}
     >
-      {tone === "cobalt" && <rect width="100" height="100" rx="24" fill="#2346E8" />}
-      <path
-        d="M31 70 V31 L69 70 V52"
-        fill="none"
-        stroke={stroke}
-        strokeWidth={tone === "cobalt" ? 11 : 10}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <polygon
+        points="220.0,220.0 343.2,220.0 516.8,500.0 343.2,780.0 220.0,780.0 393.6,500.0"
+        fill={CORAIL}
       />
-      <circle cx="69" cy="33" r={tone === "cobalt" ? 7.5 : 7} fill={stroke} />
+      <polygon
+        points="780.0,220.0 656.8,220.0 483.2,500.0 656.8,780.0 780.0,780.0 606.4,500.0"
+        fill={CORAIL}
+      />
     </svg>
   );
 }
 
-/** Logo complet : pictogramme + « the » en mono discret + « nexcom » en display. */
-export function Logo({ className, markClassName }: { className?: string; markClassName?: string }) {
+/**
+ * Logo complet « nexcom ». La boîte est serrée sur la hauteur d'x : `h-[22px]` donne des chevrons
+ * de ~21 px, soit le logo de l'en-tête de la maquette.
+ */
+export function Logo({ className, title = "nexcom" }: { className?: string; title?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark className={cn("size-9", markClassName)} />
-      <span className="inline-flex items-baseline gap-1.5 leading-none">
-        <span className="font-mono text-[0.8em] opacity-60">the</span>
-        <span className="font-display text-[1.6em] font-extrabold tracking-[-0.03em]">nexcom</span>
-      </span>
-      <span className="sr-only">The Nexcom</span>
-    </span>
+    <svg
+      viewBox="0 -524 2640 540"
+      className={cn("h-[22px] w-auto shrink-0", className)}
+      role="img"
+      aria-label={title}
+      fill="currentColor"
+    >
+      <path d="M30 0Q15 0 15 -11Q15 -20 28 -23L40 -25Q61 -29 67.5 -37.5Q74 -46 74 -67V-403Q74 -421 68.5 -427.5Q63 -434 49 -436L28 -439Q15 -440 15 -450Q15 -458 31 -461Q62 -466 78.5 -477.0Q95 -488 113 -504Q122 -513 128 -513Q137 -513 137 -501V-456Q137 -447 143.5 -444.5Q150 -442 158 -450Q198 -488 228.5 -502.0Q259 -516 293 -516Q338 -516 365.0 -484.5Q392 -453 392 -392V-67Q392 -46 398.5 -37.5Q405 -29 426 -26L448 -23Q459 -21 459 -11Q459 0 447 0H279Q265 0 265 -11Q265 -21 276 -23L290 -25Q311 -28 317.5 -37.0Q324 -46 324 -67V-381Q324 -430 306.0 -450.0Q288 -470 255 -470Q223 -470 197.5 -451.5Q172 -433 157.0 -402.5Q142 -372 142 -335V-67Q142 -46 148.5 -37.0Q155 -28 176 -26L203 -23Q214 -21 214 -12Q214 0 199 0Z" />
+      <path d="M632.0 9Q584.0 9 546.0 -23.0Q508.0 -55 485.5 -113.5Q463.0 -172 463.0 -249Q463.0 -328 486.0 -388.0Q509.0 -448 549.0 -482.0Q589.0 -516 638.0 -516Q697.0 -516 733.5 -467.5Q770.0 -419 770.0 -310Q770.0 -277 745.0 -277H555.0Q535.0 -277 535.0 -254Q535.0 -148 566.0 -95.0Q597.0 -42 645.0 -42Q683.0 -42 707.0 -69.0Q731.0 -96 746.0 -160Q749.0 -171 759.0 -171Q771.0 -171 768.0 -151Q752.0 -62 717.0 -26.5Q682.0 9 632.0 9ZM552.0 -302H653.0Q701.0 -302 701.0 -352Q701.0 -417 685.0 -454.0Q669.0 -491 637.0 -491Q598.0 -491 571.5 -446.0Q545.0 -401 537.0 -318Q535.0 -302 552.0 -302Z" />
+      <polygon
+        points="775.0,-510.0 869.0,-510.0 1024.1,-255.0 869.0,-0.0 775.0,-0.0 930.1,-255.0"
+        fill={CORAIL}
+      />
+      <polygon
+        points="1245.0,-510.0 1151.0,-510.0 995.9,-255.0 1151.0,-0.0 1245.0,-0.0 1089.9,-255.0"
+        fill={CORAIL}
+      />
+      <path d="M1425.0 9Q1381.0 9 1345.5 -20.5Q1310.0 -50 1289.0 -105.0Q1268.0 -160 1268.0 -236Q1268.0 -321 1293.5 -384.0Q1319.0 -447 1363.0 -481.5Q1407.0 -516 1461.0 -516Q1507.0 -516 1533.0 -498Q1543.0 -491 1543.0 -476L1545.0 -354Q1545.0 -339 1533.0 -339Q1522.0 -339 1519.0 -352Q1505.0 -407 1492.0 -437.0Q1479.0 -467 1465.0 -478.5Q1451.0 -490 1434.0 -490Q1414.0 -490 1392.5 -467.0Q1371.0 -444 1356.5 -392.5Q1342.0 -341 1342.0 -257Q1342.0 -150 1369.5 -96.0Q1397.0 -42 1441.0 -42Q1476.0 -42 1499.5 -71.0Q1523.0 -100 1540.0 -176Q1543.0 -187 1552.0 -187Q1564.0 -187 1561.0 -167Q1550.0 -97 1530.5 -58.5Q1511.0 -20 1484.5 -5.5Q1458.0 9 1425.0 9Z" />
+      <path d="M1757.0 9Q1706.0 9 1665.5 -25.5Q1625.0 -60 1601.0 -120.0Q1577.0 -180 1577.0 -254Q1577.0 -328 1601.0 -387.0Q1625.0 -446 1666.0 -481.0Q1707.0 -516 1757.0 -516Q1808.0 -516 1848.5 -481.0Q1889.0 -446 1913.0 -387.0Q1937.0 -328 1937.0 -254Q1937.0 -180 1913.5 -120.0Q1890.0 -60 1849.0 -25.5Q1808.0 9 1757.0 9ZM1757.0 -16Q1861.0 -16 1861.0 -254Q1861.0 -491 1757.0 -491Q1653.0 -491 1653.0 -254Q1653.0 -16 1757.0 -16Z" />
+      <path d="M1962.0 0Q1947.0 0 1947.0 -11Q1947.0 -20 1960.0 -23L1972.0 -25Q1993.0 -29 1999.5 -37.5Q2006.0 -46 2006.0 -67V-403Q2006.0 -421 2000.5 -427.5Q1995.0 -434 1981.0 -436L1960.0 -439Q1947.0 -440 1947.0 -450Q1947.0 -458 1963.0 -461Q1994.0 -466 2010.5 -477.0Q2027.0 -488 2045.0 -504Q2054.0 -513 2060.0 -513Q2069.0 -513 2069.0 -501V-456Q2069.0 -449 2075.0 -445.5Q2081.0 -442 2088.0 -449Q2129.0 -488 2159.5 -502.0Q2190.0 -516 2221.0 -516Q2250.0 -516 2272.5 -500.5Q2295.0 -485 2306.0 -454Q2309.0 -446 2316.5 -444.5Q2324.0 -443 2331.0 -450Q2372.0 -488 2402.0 -502.0Q2432.0 -516 2463.0 -516Q2505.0 -516 2531.5 -484.5Q2558.0 -453 2558.0 -392V-67Q2558.0 -46 2564.5 -37.5Q2571.0 -29 2592.0 -26L2614.0 -23Q2625.0 -21 2625.0 -11Q2625.0 0 2613.0 0H2442.0Q2428.0 0 2428.0 -11Q2428.0 -21 2439.0 -23L2453.0 -25Q2476.0 -28 2483.0 -37.0Q2490.0 -46 2490.0 -67V-381Q2490.0 -430 2472.5 -450.0Q2455.0 -470 2425.0 -470Q2395.0 -470 2370.5 -451.5Q2346.0 -433 2331.0 -402.5Q2316.0 -372 2316.0 -335V-67Q2316.0 -46 2323.0 -37.5Q2330.0 -29 2352.0 -26L2374.0 -23Q2385.0 -21 2385.0 -11Q2385.0 0 2373.0 0H2203.0Q2189.0 0 2189.0 -11Q2189.0 -21 2200.0 -23L2214.0 -25Q2235.0 -28 2241.5 -37.0Q2248.0 -46 2248.0 -67V-381Q2248.0 -430 2230.5 -450.0Q2213.0 -470 2183.0 -470Q2153.0 -470 2128.5 -451.5Q2104.0 -433 2089.0 -402.5Q2074.0 -372 2074.0 -335V-67Q2074.0 -46 2080.5 -37.0Q2087.0 -28 2108.0 -26L2135.0 -23Q2146.0 -21 2146.0 -12Q2146.0 0 2131.0 0Z" />
+    </svg>
   );
 }

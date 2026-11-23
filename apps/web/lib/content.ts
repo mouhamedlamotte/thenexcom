@@ -1,88 +1,84 @@
-/** Textes du site. Vouvoiement, phrases courtes, on parle de ce qui est livré. */
+/**
+ * Textes de la landing, DA « Sur mesure » (docs/maquettes/landing-nexcom.md).
+ * Tutoiement, phrases courtes, toujours une fin concrète. Aucun vocabulaire de couture.
+ */
 
-export type ServiceIcon = "web" | "mobile" | "software" | "payments" | "cloud" | "support";
-
-export const services: { icon: ServiceIcon; title: string; text: string }[] = [
+/** Section 02 : le diff avant → après. */
+export const diff: { avant: string; apres: string }[] = [
   {
-    icon: "web",
-    title: "Sites et applications web",
-    text: "Sites vitrines, plateformes, espaces clients et back-offices.",
+    avant: "un template que 300 autres sites utilisent déjà",
+    apres: "un site pensé pour ton activité, et pour personne d'autre",
   },
   {
-    icon: "mobile",
-    title: "Applications mobiles",
-    text: "Applications Android et iOS, publiées sur les stores.",
+    avant: "un freelance qui ne répond plus après l'acompte",
+    apres: "un seul interlocuteur, joignable même après la mise en ligne",
   },
   {
-    icon: "software",
-    title: "Logiciels sur mesure",
-    text: "Outils de gestion et SaaS adaptés à votre activité.",
+    avant: "« le paiement mobile, on verra plus tard »",
+    apres: "Orange Money et Wave branchés dès le départ",
   },
   {
-    icon: "payments",
-    title: "Paiements en ligne",
-    text: "Intégration de Wave, Orange Money et carte bancaire.",
-  },
-  {
-    icon: "cloud",
-    title: "Hébergement et cloud",
-    text: "Serveurs, noms de domaine, déploiement et sauvegardes.",
-  },
-  {
-    icon: "support",
-    title: "Maintenance et conseil",
-    text: "Suivi, évolutions, support et accompagnement.",
+    avant: "une maquette découverte le jour de la livraison",
+    apres: "une démo en ligne chaque semaine, tu ajustes en route",
   },
 ];
 
-export const pillars = [
-  { title: "Notre mission", text: "Rendre le numérique utile et accessible aux entreprises d'ici." },
-  { title: "Notre force", text: "Concevoir, coder, héberger et maintenir : tout sous un même toit." },
+/** Section 03 : les modules. */
+export const modules = [
   {
-    title: "Notre terrain",
-    text: "Le Sénégal, ses usages et ses moyens de paiement : Wave, Orange Money, carte.",
-  },
-];
-
-export const steps = [
-  { title: "Écoute", text: "Nous comprenons votre activité, votre besoin et vos contraintes." },
-  { title: "Devis", text: "Périmètre, délais et prix fixés par écrit avant de commencer." },
-  { title: "Conception", text: "Maquettes des écrans, validées avec vous." },
-  { title: "Développement", text: "Livraisons régulières, testées à chaque étape." },
-  { title: "Mise en ligne", text: "Déploiement, hébergement, puis suivi et maintenance." },
-];
-
-export const salonifySteps = [
-  {
-    title: "La prestation est saisie",
-    image: "/img/ecran-accueil.webp",
-    alt: "Saisie des prestations dans Salonify Pro",
+    lettre: "A",
+    titre: "Sites",
+    texte: "Vitrines, landing pages, listes d'attente. Rapides et bien référencés.",
+    stack: "Next.js · SEO",
+    ton: "craie",
   },
   {
-    title: "La caisse se met à jour",
-    image: "/img/ecran-caisse.webp",
-    alt: "Caisse du jour dans Salonify Pro",
+    lettre: "B",
+    titre: "Apps",
+    texte: "Web, Android, iOS. Espaces clients et outils pour ton équipe.",
+    stack: "React · Flutter",
+    ton: "indigo",
   },
   {
-    title: "Les parts de l'équipe sont prêtes",
-    image: "/img/ecran-equipe.webp",
-    alt: "Gestion de l'équipe dans Salonify Pro",
+    lettre: "C",
+    titre: "SaaS",
+    texte: "Abonnements, multi-clients, tableaux de bord. Comme Salonify.",
+    stack: "NestJS · PostgreSQL",
+    ton: "corail",
   },
+  {
+    lettre: "D",
+    titre: "Le reste",
+    texte: "Un besoin bizarre ? Tant mieux, c'est tout le principe du sur mesure.",
+    stack: null,
+    ton: "pointille",
+  },
+] as const;
+
+/** Section 05 : les étapes. */
+export const etapes = [
+  { quand: "15 min", titre: "Premier appel" },
+  // TODO: remplacer par le délai réel de la maquette (ex. « 1 semaine ») quand il est fixé.
+  { quand: "Avant le code", titre: "La maquette" },
+  { quand: "Chaque semaine", titre: "Une démo" },
+  { quand: "Le jour J", titre: "En ligne" },
 ];
 
-export const salonifyFeatures = [
-  "Caisse par moyen de paiement",
-  "Équipe, commissions et règlements",
-  "Agenda, clients et réservation en ligne",
-  "Abonnement payé en Wave, Orange Money ou carte",
-];
-
-export const nexpayFeatures = [
-  "API REST",
-  "Webhooks sécurisés",
-  "Tableau de bord",
-  "Mode test",
-  "Auto-hébergé",
-];
-
-export const stack = ["Next.js", "React", "NestJS", "Flutter", "PostgreSQL", "Redis", "Docker", "Terraform"];
+export const projets = {
+  salonify: {
+    module: "Module 01 · SaaS",
+    nom: "Salonify",
+    texte:
+      "La gestion des salons de coiffure : caisse, équipe, commissions, clients. Une app web et une app mobile pro, Wave branché.",
+    lien: "https://salonify.sn",
+    lienTexte: "Voir salonify.sn",
+    capture: { src: "/img/dashboard.webp", largeur: 1400, hauteur: 788 },
+  },
+  nexpay: {
+    module: "Module 02 · Open source",
+    nom: "Nexpay",
+    texte: "Brancher le mobile money dans une app, sans y laisser sa santé.",
+    lien: "https://github.com/mouhamedlamotte/nexpay",
+    lienTexte: "Voir sur GitHub",
+  },
+};
