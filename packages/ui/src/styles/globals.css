@@ -1,39 +1,177 @@
 /*
- * The Nexcom — design tokens (DA v1, octobre 2026).
- * Fond papier par défaut, encre pour le texte, cobalt réservé aux accents.
- * Polices : Bricolage Grotesque (titres), IBM Plex Sans (texte), IBM Plex Mono (étiquettes).
- * Les apps chargent les polices avec next/font et exposent --font-bricolage, --font-plex-sans,
- * --font-plex-mono sur <html> ; les tokens ci-dessous s'y branchent.
+ * nexcom — design tokens, DA « Sur mesure » (novembre 2026).
+ * Source de vérité : docs/da/tokens.json (repris de docs/da/tokens.css).
+ *
+ * Deux thèmes : Nuit (par défaut) et Craie, via data-theme="nuit" | "craie" sur n'importe quel élément.
+ * Les tokens sémantiques (surface, encre, encre-douce, ligne…) changent avec le thème ; @theme inline
+ * fait pointer les utilitaires Tailwind sur les variables, donc `bg-surface` suit le thème de son parent.
+ *
+ * Polices : Instrument Serif (titres), Hanken Grotesk (texte, étiquettes), Reenie Beanie (notes à la main).
+ * Les apps les chargent avec next/font/local et exposent --font-instrument-serif, --font-hanken-grotesk et
+ * --font-reenie-beanie sur <html> ; les tokens ci-dessous s'y branchent.
  */
 @import "tailwindcss";
 @source "../../../../apps/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
-@theme inline {
-  --color-cobalt: #2346e8;
-  --color-cobalt-deep: #1a33b0;
-  --color-cobalt-soft: #7f98ff;
-  --color-cobalt-line: #3d5cf0;
-  --color-mist: #e3e8fd;
-  --color-ink: #12141a;
-  --color-paper: #f4f2ec;
-  --color-slate: #5b5f6a;
-  --color-body: #3a3d45;
-  --color-line: #d9d5ca;
-  --color-fog: #c9ccd4;
-  --color-ash: #a9aeba;
+/* ---------- Couleurs ---------- */
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+:root,
+[data-theme="nuit"] {
+  --nuit: #0c1029;
+  --nuit-relief: #131843;
+  --trame: #18205a;
+  --indigo: #1f2a6b;
+  --indigo-clair: #3a4690;
+  --craie: #eef1f8;
+  --corail: #f2604a;
+  --ardoise: #8c93bf;
+  --beurre: #ffe7a3;
+  --menthe: #cdebdd;
+
+  --surface: var(--nuit);
+  --surface-relief: var(--nuit-relief);
+  --encre: var(--craie);
+  --encre-douce: var(--ardoise);
+  --accent: var(--corail);
+  --ligne: #2e3a8a;
+
+  color-scheme: dark;
 }
+
+[data-theme="craie"] {
+  --surface: var(--craie);
+  --surface-relief: #ffffff;
+  --encre: var(--nuit);
+  --encre-douce: var(--indigo-clair);
+  --ligne: #c9cfea;
+
+  color-scheme: light;
+}
+
+/* ---------- Traits (marques du plan) ---------- */
+
+:root {
+  --trait-fin: 1.5px; /* cotes, séparateurs : border-(length:--trait-fin) */
+  --trait-cadre: 3px; /* contours en pointillé des cadres, tirets 16 / 11 */
+}
+
+@theme inline {
+  /* Palette */
+  --color-nuit: var(--nuit);
+  --color-nuit-relief: var(--nuit-relief);
+  --color-trame: var(--trame);
+  --color-indigo: var(--indigo);
+  --color-indigo-clair: var(--indigo-clair);
+  --color-craie: var(--craie);
+  --color-corail: var(--corail);
+  --color-ardoise: var(--ardoise);
+  --color-beurre: var(--beurre);
+  --color-menthe: var(--menthe);
+
+  /* Rôles, selon le thème */
+  --color-surface: var(--surface);
+  --color-surface-relief: var(--surface-relief);
+  --color-encre: var(--encre);
+  --color-encre-douce: var(--encre-douce);
+  --color-accent: var(--accent);
+  --color-ligne: var(--ligne);
+
+  /* Polices */
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-note: var(--font-reenie-beanie), cursive;
+
+  /* Arrondis (radius-0 : cadres en pointillé et marques du plan, toujours à angle droit) */
+  --radius-0: 0;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --radius-icone: 23%;
+
+  /*
+   * Espacements : space-1/2/3/4/6/8/12/16 = 4/8/12/16/24/32/48/64 px, soit exactement l'échelle
+   * par défaut de Tailwind (--spacing: 0.25rem) : p-6 = space-6. Rien à redéfinir.
+   */
+}
+
+/* ---------- Styles de texte (une classe par style, comme docs/da/tokens.css) ---------- */
+
+/* Titre d'affiche. Peut déborder du cadre. */
+@utility affiche {
+  font-family: var(--font-display);
+  font-size: 280px;
+  line-height: 0.82;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+/* Titre de planche ou de section. */
+@utility titre {
+  font-family: var(--font-display);
+  font-size: 120px;
+  line-height: 0.88;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+/* Plus petite taille autorisée pour Instrument Serif : en dessous, on passe à Hanken. */
+@utility titre-2 {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+/* Le mot ou la fin de phrase qui compte, toujours en corail. */
+@utility titre-italique {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+@utility texte-grand {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@utility texte {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+/* Toujours en MAJUSCULES : numéros de module, cotes, légendes. */
+@utility etiquette {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+/* Annotation à la main : beurre sur nuit, corail sur craie. Une par composition, légèrement inclinée. */
+@utility note {
+  font-family: var(--font-note);
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* ---------- Base ---------- */
 
 @layer base {
   html {
-    background: var(--color-paper);
-    color: var(--color-ink);
-    scroll-behavior: smooth;
+    background: var(--surface);
+    color: var(--encre);
     -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   body {
     font-family: var(--font-sans);
@@ -48,7 +186,7 @@
     text-wrap: pretty;
   }
   :focus-visible {
-    outline: 2px solid var(--color-cobalt);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
 }

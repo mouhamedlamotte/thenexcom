@@ -4,44 +4,52 @@ import { site } from "@/lib/site";
 import "./globals.css";
 
 // Polices auto-hébergées (paquets @fontsource) : aucun appel à Google Fonts au build ni chez le visiteur.
-const bricolage = localFont({
-  src: "../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2",
-  weight: "200 800",
-  variable: "--font-bricolage",
+// DA « Sur mesure » (docs/da/README.md) : Instrument Serif pour les titres, Hanken Grotesk pour le texte,
+// Reenie Beanie pour les notes à la main.
+const instrumentSerif = localFont({
+  src: [
+    {
+      path: "../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
-const plexSans = localFont({
+const hankenGrotesk = localFont({
   src: [
     {
-      path: "../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2",
+      path: "../node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-400-normal.woff2",
       weight: "400",
     },
     {
-      path: "../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2",
+      path: "../node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-500-normal.woff2",
       weight: "500",
     },
     {
-      path: "../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2",
+      path: "../node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-600-normal.woff2",
       weight: "600",
     },
+    {
+      path: "../node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-700-normal.woff2",
+      weight: "700",
+    },
   ],
-  variable: "--font-plex-sans",
+  variable: "--font-hanken-grotesk",
   display: "swap",
 });
 
-const plexMono = localFont({
-  src: [
-    {
-      path: "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2",
-      weight: "400",
-    },
-    {
-      path: "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2",
-      weight: "500",
-    },
-  ],
-  variable: "--font-plex-mono",
+const reenieBeanie = localFont({
+  src: "../node_modules/@fontsource/reenie-beanie/files/reenie-beanie-latin-400-normal.woff2",
+  weight: "400",
+  variable: "--font-reenie-beanie",
   display: "swap",
 });
 
@@ -65,12 +73,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#12141A",
+  themeColor: "#0C1029",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="fr" className={`${instrumentSerif.variable} ${hankenGrotesk.variable} ${reenieBeanie.variable}`}>
       <body>{children}</body>
     </html>
   );

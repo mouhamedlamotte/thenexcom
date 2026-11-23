@@ -4,7 +4,7 @@ Contexte pour travailler sur ce dépôt avec Claude Code.
 
 ## Le projet
 
-**The Nexcom** (nexcom) est l'agence de développement de Mouhamed Lamotte (undefined.dev), à Dakar : sites, apps, SaaS, intégration Orange Money / Wave / carte. Entreprise individuelle enregistrée au RCCM à Dakar. Produit phare : Salonify (gestion de salons de coiffure).
+**The Nexcom** (nexcom) est l'agence de développement de Mouhamed Lamotte (undefined.dev), à Dakar : sites, apps, SaaS, intégration Orange Money / Wave / carte. Entreprise individuelle : RCCM SN.DKR.2026.A.40513, NINEA 013460514 (voir `docs/entreprise.md`). Produit phare : Salonify (gestion de salons de coiffure).
 
 Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed vivra d'abord ici aussi.
 

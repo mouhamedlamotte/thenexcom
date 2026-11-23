@@ -10,6 +10,14 @@ export const site = {
   phoneHref: "tel:+221764029350",
   whatsapp: "https://wa.me/221764029350",
   city: "Dakar, Sénégal",
+  /** Identité légale : à reprendre sur les devis, factures et mentions légales. */
+  legal: {
+    name: "The Nexcom",
+    form: "Entreprise individuelle",
+    owner: "Mouhamed Lamotte",
+    rccm: "SN.DKR.2026.A.40513",
+    ninea: "013460514",
+  },
 } as const;
 
 export const nav = [
