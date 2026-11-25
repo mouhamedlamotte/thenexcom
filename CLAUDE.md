@@ -29,6 +29,16 @@ Direction artistique validée le 12/11/2026. Elle a remplacé la DA v1 (cobalt /
 - Pas de sections empilées banales : chaque section a son geste (voir la maquette).
 - Contraste 4.5:1 minimum pour le texte, `prefers-reduced-motion` respecté.
 
+### Landing v2 (validée le 25/11/2026)
+
+La landing a évolué par rapport à la maquette « Sur mesure » ci-dessus (prototype : https://claude.ai/artifact/5xxthvaf5fGF42CkK2Dqws) :
+- Tout en sombre : nuit #0C1029, indigo #121A4A (héros, réalisations, appel final), bleu nuit #171F55 (studio, méthode). Aucune section claire.
+- Titres en **Instrument Sans** 500 (`@fontsource/instrument-sans`), mot fort en Instrument Serif italique corail, texte en Hanken Grotesk.
+- Héros : grille en perspective + le x du logo en 3D (`three`, chargé à la demande dans `components/site/hero-scene.tsx`), qui se retourne en « >> » et fonce : c'est le « next ». Menu en capsule indigo détachée.
+- Sections : héros, studio, expertises (dépliables), réalisations (Salonify / NexImmo / Nexpay), méthode, qui est derrière, FAQ, appel final. Styles en CSS simple dans `app/globals.css`, textes dans `lib/content.ts`.
+- Règles demandées par Mouhamed : **aucun prix sur le site**, **pas de faux scroll** (rien d'épinglé ni piloté par le défilement), pas de murs de cartes.
+- À fournir : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram, vraies captures NexImmo et Nexpay (aujourd'hui dessinées en code avec des données fictives).
+
 ### État de la migration
 
 1. ~~Tokens et polices~~ : fait.

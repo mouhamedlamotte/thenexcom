@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 import "./globals.css";
 
 // Polices auto-hébergées (paquets @fontsource) : aucun appel à Google Fonts au build ni chez le visiteur.
-// DA « Sur mesure » (docs/da/README.md) : Instrument Serif pour les titres, Hanken Grotesk pour le texte,
-// Reenie Beanie pour les notes à la main.
+// Landing (25/11/2026) : Instrument Sans pour les titres, Instrument Serif italique pour le mot fort,
+// Hanken Grotesk pour le texte. Reenie Beanie reste pour les notes à la main de la DA.
 const instrumentSerif = localFont({
   src: [
     {
@@ -46,6 +46,16 @@ const hankenGrotesk = localFont({
   display: "swap",
 });
 
+const instrumentSans = localFont({
+  src: [
+    { path: "../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-500-normal.woff2", weight: "500" },
+    { path: "../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-600-normal.woff2", weight: "600" },
+  ],
+  variable: "--font-instrument-sans",
+  display: "swap",
+});
+
 const reenieBeanie = localFont({
   src: "../node_modules/@fontsource/reenie-beanie/files/reenie-beanie-latin-400-normal.woff2",
   weight: "400",
@@ -72,14 +82,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0C1029",
+  themeColor: "#121A4A",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="fr"
-      className={`${instrumentSerif.variable} ${hankenGrotesk.variable} ${reenieBeanie.variable}`}
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${hankenGrotesk.variable} ${reenieBeanie.variable}`}
     >
       <body>{children}</body>
     </html>
