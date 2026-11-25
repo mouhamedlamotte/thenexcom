@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 /** Qui est derrière : le personnage de la DA (fond noir posé en mode « écran ») et le fondateur. */
@@ -28,9 +29,9 @@ export function Derriere() {
             <div className="sign">
               <b>{site.legal.owner}</b>
               <span>Fondateur · développeur</span>
-              <a className="lien-p" href={site.github} target="_blank" rel="noopener">
-                GitHub
-              </a>
+              <Link className="lien-p" href="/mouhamed-lamotte">
+                Son portfolio
+              </Link>
             </div>
           </div>
         </div>

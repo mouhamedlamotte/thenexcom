@@ -6,7 +6,7 @@ Contexte pour travailler sur ce dépôt avec Claude Code.
 
 **The Nexcom** (nexcom) est l'agence de développement de Mouhamed Lamotte (undefined.dev), à Dakar : sites, apps, SaaS, intégration Orange Money / Wave / carte. Entreprise individuelle : RCCM SN.DKR.2026.A.40513, NINEA 013460514 (voir `docs/entreprise.md`). Produit phare : Salonify (gestion de salons de coiffure).
 
-Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed vivra d'abord ici aussi.
+Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed y vit aussi, sur la route `/mouhamed-lamotte`.
 
 ## DA « Sur mesure »
 
@@ -39,13 +39,22 @@ La landing a évolué par rapport à la maquette « Sur mesure » ci-dessus (pro
 - Règles demandées par Mouhamed : **aucun prix sur le site**, **pas de faux scroll** (rien d'épinglé ni piloté par le défilement), pas de murs de cartes.
 - À fournir : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram, vraies captures NexImmo et Nexpay (aujourd'hui dessinées en code avec des données fictives).
 
+### Portfolio (validé le 25/11/2026)
+
+Route `apps/web/app/mouhamed-lamotte` (prototype : https://claude.ai/artifact/XrinjDX435ng3NYtju4m5x).
+- Composants dans `components/portfolio/`, styles dans `portfolio.module.css` (module CSS : rien ne fuit vers la landing ni l'inverse, `cl("btn btn-cor")` dans `outils.tsx` traduit les noms), données dans `lib/portfolio.ts`.
+- Héros « Nom » : le nom en très grand, le personnage, et le décor « Plan » (papier quadrillé, lignes de construction posées sur le vrai texte, cotes en px réels, une note à la main).
+- Une teinte par section (nuit, indigo, bleu nuit), aucun dégradé décoratif. Menu en île à droite comme la landing.
+- Projets mis en avant : Salonify, NexImmo (« fait sur mesure ») et Nexpay (open source) ; le reste en index, l'écran suit la souris. Parcours en timeline : la liste défile, la fiche à droite reste collée.
+- `public/img/portfolio/nexpay.webp` est une maquette du tableau de bord Nexpay, dans la DA propre à Nexpay (encre, violet #8B7CFF, Geist / Geist Mono), données fictives, en attendant la refonte de l'app.
+
 ### État de la migration
 
 1. ~~Tokens et polices~~ : fait.
 2. ~~Logo, `icon.png`, `apple-icon.png`, image OG~~ : fait (`opengraph-image.tsx` génère l'OG au build).
 3. ~~Sections de la landing selon la maquette, `lib/content.ts` au tutoiement~~ : fait.
 4. ~~README~~ : fait.
-5. Reste : le portfolio. À compléter sur la landing : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram.
+5. ~~Portfolio~~ : fait (`/mouhamed-lamotte`). À compléter sur la landing : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram.
 
 ## Commandes
 
