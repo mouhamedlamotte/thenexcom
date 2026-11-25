@@ -29,7 +29,7 @@ export function Derriere() {
             <div className="sign">
               <b>{site.legal.owner}</b>
               <span>Fondateur · développeur</span>
-              <Link className="lien-p" href="/mouhamed-lamotte">
+              <Link className="lien-p" href="/@mouhamedlamotte">
                 Son portfolio
               </Link>
             </div>

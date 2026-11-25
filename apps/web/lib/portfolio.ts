@@ -1,11 +1,13 @@
 /**
- * Contenu du portfolio de Mouhamed Lamotte (/mouhamed-lamotte).
+ * Contenu du portfolio de Mouhamed Lamotte, servi sur /@mouhamedlamotte (page : app/mouhamed-lamotte).
  * Données reprises de l'ancien portfolio (github.com/mouhamedlamotte/portfolio), réécrites au tutoiement court.
  */
 
 const IMG = "/img/portfolio";
 
 export const portfolio = {
+  /** Adresse publique du portfolio (réécrite vers app/mouhamed-lamotte dans next.config.ts). */
+  chemin: "/@mouhamedlamotte",
   nom: "Mouhamed Lamotte",
   pseudo: "undefined.dev",
   email: "mouhamedlamotte.dev@gmail.com",

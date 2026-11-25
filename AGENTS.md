@@ -6,7 +6,7 @@ Contexte pour travailler sur ce dépôt avec Codex.
 
 **The Nexcom** (nexcom) est l'agence de développement de Mouhamed Lamotte (undefined.dev), à Dakar : sites, apps, SaaS, intégration Orange Money / Wave / carte. Entreprise individuelle : RCCM SN.DKR.2026.A.40513, NINEA 013460514 (voir `docs/entreprise.md`). Produit phare : Salonify (gestion de salons de coiffure).
 
-Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed y vit aussi, sur la route `/mouhamed-lamotte`.
+Ce dépôt (pnpm + Turborepo) contient le site public `apps/web` (Next.js 16, App Router, Tailwind CSS 4) et le paquet partagé `packages/ui`. Le portfolio personnel de Mouhamed y vit aussi, sur `/@mouhamedlamotte`.
 
 ## DA « Sur mesure »
 
@@ -41,7 +41,7 @@ La landing a évolué par rapport à la maquette « Sur mesure » ci-dessus (pro
 
 ### Portfolio (validé le 25/11/2026)
 
-Route `apps/web/app/mouhamed-lamotte` (prototype : https://claude.ai/artifact/XrinjDX435ng3NYtju4m5x).
+Servi sur `/@mouhamedlamotte` : la page est dans `apps/web/app/mouhamed-lamotte` et `next.config.ts` la réécrit (un dossier `@…` serait un slot de routes parallèles) ; l'ancienne adresse `/mouhamed-lamotte` redirige. Prototype : https://claude.ai/artifact/XrinjDX435ng3NYtju4m5x. Une app séparée (`apps/portfolio`, son propre domaine) reste possible plus tard.
 - Composants dans `components/portfolio/`, styles dans `portfolio.module.css` (module CSS : rien ne fuit vers la landing ni l'inverse, `cl("btn btn-cor")` dans `outils.tsx` traduit les noms), données dans `lib/portfolio.ts`.
 - Héros « Nom » : le nom en très grand, le personnage, et le décor « Plan » (papier quadrillé, lignes de construction posées sur le vrai texte, cotes en px réels, une note à la main).
 - Une teinte par section (nuit, indigo, bleu nuit), aucun dégradé décoratif. Menu en île à droite comme la landing.
@@ -54,7 +54,7 @@ Route `apps/web/app/mouhamed-lamotte` (prototype : https://claude.ai/artifact/Xr
 2. ~~Logo, `icon.png`, `apple-icon.png`, image OG~~ : fait (`opengraph-image.tsx` génère l'OG au build).
 3. ~~Sections de la landing selon la maquette, `lib/content.ts` au tutoiement~~ : fait.
 4. ~~README~~ : fait.
-5. ~~Portfolio~~ : fait (`/mouhamed-lamotte`). À compléter sur la landing : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram.
+5. ~~Portfolio~~ : fait (`/@mouhamedlamotte`). À compléter sur la landing : délai réel de la maquette (`etapes` dans `lib/content.ts`), liens LinkedIn / Instagram.
 
 ## Commandes
 

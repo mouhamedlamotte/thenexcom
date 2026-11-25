@@ -16,17 +16,17 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: "Mouhamed Lamotte — développeur à Dakar" },
   description,
-  alternates: { canonical: "/mouhamed-lamotte" },
+  alternates: { canonical: portfolio.chemin },
   openGraph: {
     type: "profile",
     title: "Mouhamed Lamotte — développeur à Dakar",
     description,
-    url: "/mouhamed-lamotte",
+    url: portfolio.chemin,
   },
 };
 
 /**
- * Portfolio de Mouhamed Lamotte. Prototype validé le 25/11/2026 (héros « Nom », décor « Plan ») :
+ * Portfolio de Mouhamed Lamotte, servi sur /@mouhamedlamotte (réécriture dans next.config.ts). Prototype validé le 25/11/2026 (héros « Nom », décor « Plan ») :
  * claude.ai/artifact/XrinjDX435ng3NYtju4m5x. Styles isolés dans components/portfolio/portfolio.module.css,
  * textes et données dans lib/portfolio.ts.
  */
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
     name: portfolio.nom,
     alternateName: portfolio.pseudo,
     jobTitle: "Développeur, fondateur de The Nexcom",
-    url: `${site.url}/mouhamed-lamotte`,
+    url: `${site.url}${portfolio.chemin}`,
     address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
     worksFor: { "@type": "Organization", name: site.name, url: site.url },
     sameAs: portfolio.reseaux.map((r) => r.href),
