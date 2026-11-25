@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { projets, type Projet } from "@/lib/content";
 
@@ -90,24 +90,30 @@ function Ecran({ id }: { id: Projet["id"] }) {
   );
 }
 
-/** Réalisations : la liste des produits à gauche, l'écran du produit choisi à droite (clic ou flèches). */
+/**
+ * Réalisations, pilotées par le défilement : chaque produit a son bloc de texte, l'écran collé à droite montre
+ * celui qui est au centre de l'écran. Sur téléphone, l'écran est sous chaque bloc.
+ */
 export function Realisations() {
   const [actif, setActif] = useState<Projet["id"]>("salonify");
-  const onglets = useRef<(HTMLButtonElement | null)[]>([]);
-  const courant = projets.find((p) => p.id === actif) ?? projets[0]!;
+  const blocs = useRef<(HTMLElement | null)[]>([]);
 
-  const clavier = (e: React.KeyboardEvent, i: number) => {
-    const n = projets.length;
-    const vers = e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1 : 0;
-    if (!vers) return;
-    e.preventDefault();
-    const j = (i + vers + n) % n;
-    setActif(projets[j]!.id);
-    onglets.current[j]?.focus();
-  };
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entrees) => {
+        for (const e of entrees) {
+          const id = (e.target as HTMLElement).dataset.id as Projet["id"] | undefined;
+          if (e.isIntersecting && id) setActif(id);
+        }
+      },
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    blocs.current.forEach((b) => b && obs.observe(b));
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <section id="realisations" className="realisations">
+    <section id="realisations" className="realisations" data-titre="Réalisations">
       <div className="c">
         <div className="tete-sec">
           <div>
@@ -118,61 +124,48 @@ export function Realisations() {
           </div>
           <p className="intro">Conçus, codés et mis en ligne chez nous. Ce sont aussi les bases qu&apos;on adapte pour nos clients.</p>
         </div>
-        <div className="projets">
-          <ul className="choix-projets" role="tablist" aria-label="Projets">
+        <div className="real-scroll">
+          <div className="real-blocs">
             {projets.map((p, i) => (
-              <li key={p.id} role="presentation">
-                <button
-                  ref={(el) => {
-                    onglets.current[i] = el;
-                  }}
-                  type="button"
-                  role="tab"
-                  id={`onglet-${p.id}`}
-                  aria-controls={`projet-${p.id}`}
-                  aria-selected={p.id === actif}
-                  tabIndex={p.id === actif ? 0 : -1}
-                  onClick={() => setActif(p.id)}
-                  onKeyDown={(e) => clavier(e, i)}
-                >
-                  <span className="nom-p">
-                    {p.nom}
-                    <Chevrons />
-                  </span>
-                  <span className="meta-p">{p.meta}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div>
-            <div className="ecran-p">
-              {projets.map((p) => (
-                <div
-                  key={p.id}
-                  id={`projet-${p.id}`}
-                  role="tabpanel"
-                  aria-labelledby={`onglet-${p.id}`}
-                  aria-hidden={p.id !== actif}
-                  className={`panneau-p p-${p.id}${p.id === actif ? " on" : ""}`}
-                >
-                  <Ecran id={p.id} />
-                </div>
-              ))}
-            </div>
-            <div className="texte-p">
-              <div>
-                <p>{courant.texte}</p>
+              <article
+                key={p.id}
+                ref={(el) => {
+                  blocs.current[i] = el;
+                }}
+                data-id={p.id}
+                className={`real-bloc${p.id === actif ? " on" : ""}`}
+              >
+                <p className="meta-p">{p.meta}</p>
+                <h3 className="nom-p">
+                  {p.nom}
+                  <Chevrons />
+                </h3>
+                <p className="texte">{p.texte}</p>
                 <div className="tags">
-                  {courant.tags.map((t) => (
+                  {p.tags.map((t) => (
                     <span key={t}>{t}</span>
                   ))}
                 </div>
-              </div>
-              {courant.lien && (
-                <a className="lien-p" href={courant.lien.href} target="_blank" rel="noopener">
-                  {courant.lien.texte}
-                </a>
-              )}
+                {p.lien && (
+                  <a className="lien-p" href={p.lien.href} target="_blank" rel="noopener">
+                    {p.lien.texte}
+                  </a>
+                )}
+                <div className={`ecran-p real-ecran-mobile`} aria-hidden>
+                  <div className={`panneau-p p-${p.id} on`}>
+                    <Ecran id={p.id} />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="real-colle">
+            <div className="ecran-p">
+              {projets.map((p) => (
+                <div key={p.id} aria-hidden={p.id !== actif} className={`panneau-p p-${p.id}${p.id === actif ? " on" : ""}`}>
+                  <Ecran id={p.id} />
+                </div>
+              ))}
             </div>
             <p className="note-demo">Les écrans NexImmo et Nexpay sont des exemples avec des données fictives.</p>
           </div>

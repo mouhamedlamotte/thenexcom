@@ -7,7 +7,7 @@ import { HeroScene } from "./hero-scene";
  */
 export function Hero() {
   return (
-    <section id="accueil" className="heros">
+    <section id="accueil" className="heros" data-titre="Accueil">
       <HeroScene />
       <div className="c heros-contenu">
         <h1 className="titre" id="heros-titre">

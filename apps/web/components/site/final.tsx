@@ -33,7 +33,7 @@ export function Final() {
   }, []);
 
   return (
-    <section id="contact" className={`final${next ? " next" : ""}`}>
+    <section id="contact" className={`final${next ? " next" : ""}`} data-titre="Contact">
       <div className="c final-grille">
         <div>
           <h2>

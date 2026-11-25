@@ -1,22 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { expertises, type Expertise } from "@/lib/content";
 
-const Plus = () => (
-  <span className="plus" aria-hidden>
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <path d="M8 2v12M2 8h12" />
-    </svg>
-  </span>
-);
-
 /** Le visuel dessiné de chaque expertise (décoratif). */
-function Visuel({ type }: { type: Expertise["visuel"] }) {
+function Visuel({ type, cl = "" }: { type: Expertise["visuel"]; cl?: string }) {
   switch (type) {
     case "site":
       return (
-        <div className="visuel" aria-hidden>
+        <div className={`visuel ${cl}`} aria-hidden>
           <div className="v-fen">
             <div className="barre-f">
               <i />
@@ -39,14 +31,14 @@ function Visuel({ type }: { type: Expertise["visuel"] }) {
       );
     case "logiciel":
       return (
-        <div className="visuel v-img" aria-hidden>
+        <div className={`visuel v-img ${cl}`} aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/img/dashboard.webp" alt="" />
         </div>
       );
     case "paiement":
       return (
-        <div className="visuel v-pay" aria-hidden>
+        <div className={`visuel v-pay ${cl}`} aria-hidden>
           <div className="tel">
             <div className="ecran">
               <span style={{ color: "#3A4690" }}>Payer avec</span>
@@ -62,7 +54,7 @@ function Visuel({ type }: { type: Expertise["visuel"] }) {
       );
     case "design":
       return (
-        <div className="visuel v-design" aria-hidden>
+        <div className={`visuel v-design ${cl}`} aria-hidden>
           <span className="sw" style={{ background: "#0C1029", color: "#C9CFEA", border: "1px solid #232C66" }}>
             Nuit
           </span>
@@ -84,7 +76,7 @@ function Visuel({ type }: { type: Expertise["visuel"] }) {
       );
     case "suivi":
       return (
-        <div className="visuel v-suivi" aria-hidden>
+        <div className={`visuel v-suivi ${cl}`} aria-hidden>
           <div className="lg">
             <span>salonify.sn</span>
             <span className="ok">En ligne</span>
@@ -106,12 +98,29 @@ function Visuel({ type }: { type: Expertise["visuel"] }) {
   }
 }
 
-/** Les expertises, dépliables : une seule ouverte à la fois. */
+/**
+ * Les expertises, pilotées par le défilement : la liste défile normalement, le bloc au centre de l'écran s'allume
+ * et son visuel s'affiche dans le panneau collé à droite. Sur téléphone, chaque visuel est sous son bloc.
+ */
 export function Expertises() {
-  const [ouvert, setOuvert] = useState<string | null>(expertises[0]?.id ?? null);
+  const [actif, setActif] = useState(0);
+  const blocs = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entrees) => {
+        for (const e of entrees) {
+          if (e.isIntersecting) setActif(Number((e.target as HTMLElement).dataset.i));
+        }
+      },
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    blocs.current.forEach((b) => b && obs.observe(b));
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <section id="expertises" className="expertises">
+    <section id="expertises" className="expertises" data-titre="Expertises">
       <div className="c">
         <div className="tete-sec">
           <div>
@@ -120,45 +129,44 @@ export function Expertises() {
               Tout ce qu&apos;il faut pour passer ton activité <em className="s">en ligne.</em>
             </h2>
           </div>
-          <p className="intro">
-            Du design à la mise en ligne, puis le suivi. Tu peux prendre une seule expertise ou nous confier tout le
-            chemin.
-          </p>
+          <p className="intro">Du design à la mise en ligne, puis le suivi. Une seule expertise, ou tout le chemin.</p>
         </div>
-        <div className="liste">
-          {expertises.map((e, i) => {
-            const estOuvert = ouvert === e.id;
-            return (
-              <div key={e.id} className="item" data-ouvert={estOuvert}>
-                <button
-                  type="button"
-                  aria-expanded={estOuvert}
-                  aria-controls={`exp-${e.id}`}
-                  onClick={() => setOuvert(estOuvert ? null : e.id)}
-                >
-                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="nom">{e.nom}</span>
-                  <Plus />
-                </button>
-                <div className="corps" id={`exp-${e.id}`}>
-                  <div>
-                    <div className="dedans">
-                      <span className="vide" />
-                      <div>
-                        <p>{e.texte}</p>
-                        <ul className="livrables">
-                          {e.livrables.map((l) => (
-                            <li key={l}>{l}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <Visuel type={e.visuel} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="exp-scroll">
+          <ol className="exp-blocs">
+            {expertises.map((e, i) => (
+              <li
+                key={e.id}
+                ref={(el) => {
+                  blocs.current[i] = el;
+                }}
+                data-i={i}
+                className={`exp-bloc${actif === i ? " on" : ""}`}
+              >
+                <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="nom">{e.nom}</h3>
+                <p>{e.texte}</p>
+                <ul className="livrables">
+                  {e.livrables.map((l) => (
+                    <li key={l}>{l}</li>
+                  ))}
+                </ul>
+                <Visuel type={e.visuel} cl="exp-visuel-mobile" />
+              </li>
+            ))}
+          </ol>
+          <div className="exp-colle" aria-hidden>
+            <div className="exp-scene">
+              {expertises.map((e, i) => (
+                <Visuel key={e.id} type={e.visuel} cl={actif === i ? "on" : ""} />
+              ))}
+            </div>
+            <div className="exp-progres">
+              <span>
+                {String(actif + 1).padStart(2, "0")} / {String(expertises.length).padStart(2, "0")}
+              </span>
+              <i style={{ "--p": (actif + 1) / expertises.length } as React.CSSProperties} />
+            </div>
+          </div>
         </div>
       </div>
     </section>

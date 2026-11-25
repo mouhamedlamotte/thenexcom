@@ -3,7 +3,7 @@ import { faits } from "@/lib/content";
 /** Le studio : une phrase, puis trois faits vrais. */
 export function Studio() {
   return (
-    <section id="studio" className="studio">
+    <section id="studio" className="studio" data-titre="Le studio">
       <div className="c">
         <div className="studio-grille">
           <div>

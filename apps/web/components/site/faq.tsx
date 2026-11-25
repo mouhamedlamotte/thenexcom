@@ -3,7 +3,7 @@ import { faq } from "@/lib/content";
 /** FAQ en <details> natifs : lisible sans JavaScript et par les moteurs de recherche. */
 export function Faq() {
   return (
-    <section id="faq" className="faq">
+    <section id="faq" className="faq" data-titre="Questions">
       <div className="c faq-grille">
         <div>
           <p className="ey">Questions</p>

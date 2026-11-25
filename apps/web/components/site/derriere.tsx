@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 /** Qui est derrière : le personnage de la DA (fond noir posé en mode « écran ») et le fondateur. */
 export function Derriere() {
   return (
-    <section id="equipe" className="derriere">
+    <section id="equipe" className="derriere" data-titre="Qui est derrière">
       <div className="c">
         <div className="derriere-grille">
           <figure>
